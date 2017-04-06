@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8" ></script>
+
+</head>
+
+<body>
+
+<label><input type="checkbox" name="" value="" placeholder="">男</label>
+<label><input type="checkbox" name="" value="" placeholder="">女</label>
+<script>
+$("input").each(function(index, el) {
+
+		if ($(this).is(":checked")) {
+		console.log("a")
+		$(this).attr("value","1");
+
+	}else{
+
+		$(this).attr("value","0");
+	}
+
+
+});
+
+$("label").click(function(){
+
+	if ($(this).find('input[type=checkbox]').is(":checked")){
+
+		$(this).find('input[type=checkbox]').attr("value",1);
+	}else{
+
+		$(this).find('input[type=checkbox]').attr("value",0);
+	}
+	
+})
+
+</script>
+</body>
+
+</html>

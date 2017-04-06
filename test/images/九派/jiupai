@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<meta charset="utf-8">
+	<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="jiupai.css" rel="stylesheet">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<div class="dianliangtiao"></div>
+			<section>
+				<h1>新闻资讯</h1>
+				<img src="images/add.png">
+			</section>
+		</header>
+	</body>
+</html>

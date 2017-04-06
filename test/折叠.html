@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #list {
+        width: 400px;
+        border: 1px solid #666;
+        margin: 0 auto;
+    }
+    
+    #list>li {
+        list-style-type: none;
+        width: 390px;
+    }
+    
+    #list>li>ul>li {
+        border-bottom: 1px solid #666;
+        list-style-type: none;
+        width: 390px;
+        padding-left: 10px;
+        line-height: 30px;
+    }
+    
+    h2 {
+        background: url(images/plane_ico.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding-left: 30px;
+        background-size: 20px 20px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 20px;
+        background-color: red;
+        cursor: pointer;
+        color: #fff;
+        width:370px;
+        line-height: 40px;
+    }
+    
+    .lis>ul {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li class="lis">
+            <h2>我的好友</h2>
+            <ul>
+                <li>张三</li>
+                <li>张二</li>
+                <li>张五</li>
+                <li>张六</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h2>企业好友</h2>
+            <ul>
+                <li>王五</li>
+                <li>王五</li>
+                <li>王五</li>
+                <li>王五王五</li>
+                <li>王五</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h2>亲友</h2>
+            <ul>
+                <li>tt</li>
+                <li>dd</li>
+                <li>aa</li>
+                <li>nn</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+    window.onload = function() {
+        var oList = document.getElementById("list");
+        var oLis = oList.getElementsByClassName("lis");
+        var oH2 = oList.getElementsByTagName("h2");
+
+
+        for (var i = 0; i < oLis.length; i++) {
+            var oUl = oLis[i].getElementsByTagName("ul")[0];
+            oH2[i].index = i;
+            oH2[i].onclick = function() {
+                var oUl = oLis[this.index].getElementsByTagName("ul")[0];
+                if (oUl.offOn) {
+
+                    oLis[this.index].getElementsByTagName("ul")[0].style.display = "none";
+                    oUl.offOn = false;
+
+                } else {
+
+                    oLis[this.index].getElementsByTagName("ul")[0].style.display = "block";
+                    oUl.offOn = true;
+                }
+
+
+                for (var i = 0; i < oLiv.length; i++) {
+                    oLiv[i].onclick = function() {
+
+                        clear();
+                        this.style.backgroundColor = "#FDEBA7";
+                    }
+                }
+
+                function clear() {
+                    for (var i = 0; i < oLis.length; i++) {
+                      var oliv=oLis[i].getElementsByTagName("li");
+                      for (var j = 0; i <oliv.length; i++) {
+                      	
+                      }
+                    }
+                }
+
+
+
+
+            }
+
+
+        }
+
+
+
+
+    }
+    </script>
+</body>
+
+</html>

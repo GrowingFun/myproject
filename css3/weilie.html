@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	input:checked{
+		position: relative;
+	}
+	input:checked:after{
+		border: red;
+		content: '';
+		display: block;
+		width:30px;
+		height: 30px;
+		border: 20px solid red;
+		position: absolute;
+		left: -10px;
+		top: -10px;
+	}
+	p+span{
+		color: red;
+	}
+	p::selection{
+		background: red;
+	}
+	p{
+		width: 50px;
+	}
+	p:first-line{
+		background: red;
+	}
+	p:first-letter{
+		font-size: 50px;
+	}
+	p:not(.ss){
+		background: yellow;
+	}
+	.box2{
+		text-shadow:-10px 10px 20px red;
+		font-size: 60px;
+	}
+	</style>
+</head>
+<body>
+	<input type="checkbox" name="" value="fdsf">
+	<p class="ss">fsdjflksdjfsldkfjsdlkfjsdlkvnsdlvnsdovlnsldkvnsfosdjfsopfjsdpofnsdpfnspfnsfnsf
+	fdsfjsdifnsdklfns
+	fdsjfosdnfs</p>
+	<p class="">fdsfgjsio;jtij</p>
+	<div class="box2">
+	你好
+		
+	</div>
+</body>
+</html>

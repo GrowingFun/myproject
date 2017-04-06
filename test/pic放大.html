@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <script src="js/layer/layer.js" type="text/javascript" ></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .tong{
+    	width:200px;height:200px;
+    }
+.layui-layer-content{
+	width: auto;
+	height: auto;
+}
+.layui-layer-content img{
+	width: 500px;
+	height: auto;
+}
+    .xx{
+    	width: 200px;
+    	height: 200px;
+    }
+    </style>
+</head>
+
+<body>
+<div class="xx">
+	 <img class="tong"  src="images/2.png" alt="" >
+</div>
+   
+    <script>
+    //页面层-佟丽娅
+    $('.xx').click(function() {
+        layer.open({
+        	offset:[$(this).offset().left,$(this).offset().top],
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: $(this).find('img').width(),
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content:$(".xx").html()
+
+        });
+
+    })
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

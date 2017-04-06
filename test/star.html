@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="js/star/lib/jquery.raty.js" type="text/javascript" charset="utf-8"></script>
+
+
+	<title>Document</title>
+</head>
+<body>
+	<div id="star" data-score="2"></div><span>评份为：<em class="showscore"></em></span>
+	<script>
+	var $star=$("#star").attr("data-score");
+	$(".showscore").text($star);
+		$('#star').raty
+		({ 
+			half: true,
+			width:'200px',
+			score:function(){
+				return $(this).attr('data-score');
+			}
+
+			 });
+
+
+
+$('#star').find("img").click(function(event) {
+	var indeximg=$(this).index();
+	var imgsrc=$(this).attr("src");
+	console.log(imgsrc);
+	if (imgsrc=='img/star-half.png') {
+		$("#star").attr("data-score",indeximg+0.5);
+	}else{
+		$("#star").attr("data-score",indeximg+1);
+	}
+	var $star=$("#star").attr("data-score");
+	$(".showscore").text($star);
+});
+
+	</script>
+	
+</body>
+</html>

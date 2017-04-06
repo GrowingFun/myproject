@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:500px;
+			height:400px;
+			background-color:#eee;
+			border:1px solid #333;
+			margin-bottom:20px;
+		}
+		
+	</style>
+	<script>
+		window.onload=function(){
+			var oInput=document.getElementById("input");
+			var oBtn=document.getElementById("btn");
+			var oBox=document.getElementById("box");
+			oBtn.onclick=function(){
+				if (!oInput.value=="") {
+					oBox.innerHTML+='<li>'+"我:"+oInput.value+'</li>';
+						oInput.value="";
+				}
+				
+
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+			
+	</div>	
+	妙味：<input id="input" type="text" name="" value="" placeholder="">
+	<input id="btn" type="button" name="" value="提交" placeholder="">
+
+</body>
+</html>

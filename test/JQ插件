@@ -1,0 +1,10 @@
+jq插件:
+$.extend()工具写法-工具方法封装
+$.fn.extend()
+
+trim删除字符串前后空格
+
+$.trim=funciton(){
+ return str.replace(/^\s+|\s+$/g,'');
+}
+$.proxy更改this指向

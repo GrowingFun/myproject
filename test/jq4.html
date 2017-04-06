@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+	<script src="" type="text/javascript"></script>
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	body,html{
+		height: 100%;
+		background: #eee;
+	}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid red;
+			position: absolute;
+			left: 50%;
+			margin-left: -50px;
+			margin-top: -50px;
+			top: 50%;
+			display: none;
+		}
+		
+	</style>
+</head>
+<body>
+<input type="button" name="" value="显示" placeholder="">
+	<div class="box">
+		
+	</div>
+	<script>
+		console.log($(".box").outerWidth());
+		$("input[type=button]").click(function(){
+			$(".box").css('display', 'block');
+			$("body").css('overflow', 'hidden');
+		})
+
+
+	</script>
+</body>
+</html>

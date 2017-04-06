@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	body{
+		padding: 50px 50px;
+	}
+		.color span{
+			font:20px/26px arial;
+			color: #333;
+			display: inline-block;
+			padding-right: 20px;
+			cursor: pointer;
+		}
+		.btn span{
+			background-image: -webkit-linear-gradient(top,#fff,red);
+			color: #333;
+			display: block;
+			width: 100px;
+			line-height: 30px;
+			height: 30px;
+			margin-top: 20px;
+			text-align: center;
+		}
+		.boxWrap{
+			display: -webkit-box;
+			margin-top: 20px;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #333;
+			margin-right: 20px;
+
+
+		}
+
+	</style>
+</head>
+<body>
+<div class="color">
+	<span>red</span>
+	<span>yellow</span>
+	<span>green</span>
+	<span>blue</span>
+</div>
+<div class="btn">
+	<span>清空红色</span>
+</div>
+<div class="boxWrap">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+<script>	
+var colorVal=null;
+$(".color").find('span').click(function(){
+	colorVal=$(this).text();
+
+})
+$(".boxWrap").find('.box').click(function(){
+	$(this).css('background', colorVal);
+	$(this).attr("value",colorVal);
+})
+$(".btn").find('span').click(function(){
+	var oBox=$(".boxWrap").find('.box[value='+colorVal+']').css('background', '');
+})
+</script>
+</body>
+</html>

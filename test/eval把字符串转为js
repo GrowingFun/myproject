@@ -1,0 +1,31 @@
+eval把字符串转为js————可以解何字符串变成js
+JSON.parse(str)————只能解析json形式的字串变成js 安全性高
+
+json转为字符串
+var str=JSON.stringify(json);
+
+对象引用：
+var a={
+	name:"hello"
+}
+var b=a;
+b.name='hi';
+alert(a.name);
+
+
+JSON浅拷贝
+for(var attr in a){
+	b[attr]=a[attr]
+}
+
+json深拷贝
+
+var a={
+	name:"hello"
+}
+
+json深拷贝
+var str=JSON.stringify(a)//转为字符串
+var b=JSON.parse(str);
+b.name='hi';
+

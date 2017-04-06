@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+		#box{
+			width:200px;
+			height:100px;
+			border:1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" name="" value="点击设置" placeholder="">
+	<div id="box">
+		
+	</div>
+	<script>
+		window.onload=function(){
+			var oDiv=document.getElementById("box");
+			var oBtn=document.getElementById("btn");
+			oBtn.onclick=bgChang;
+			var btn=1;
+			function bgChang(){
+				if (btn) {
+
+					oDiv.style.backgroundColor="red";
+					oBtn.setAttribute("value","取消设置");
+				}else{
+
+					oDiv.style.backgroundColor="";
+					oBtn.setAttribute("value","点击设置");
+				}
+				btn=!btn;
+
+			}
+		}
+	</script>
+</body>
+</html>

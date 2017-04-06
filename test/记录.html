@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        background-color: #333;
+    }
+    
+    #pic {
+        width: 391px;
+        height: 479px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        position: relative;
+    }
+    
+    p {
+        position: absolute;
+        top: -16px;
+        left: 0px;
+        font-size: 16px;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 391px;
+        line-height: 36px;
+        text-align: center;
+        color: #fff;
+    }
+    
+    span {
+        display: block;
+        text-align: center;
+        color: #fff;
+        margin-top: 10px;
+    }
+    
+    img {
+        background-color: #fff;
+        width: 391px;
+        height: 479px;
+    }
+    
+    li {
+        width: 50px;
+        height: 50px;
+        background-color: #666;
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
+    
+    ul {
+        position: absolute;
+        right: -60px;
+        top: 0;
+    }
+    
+    li.active {
+        background-color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="pic">
+        <img src="" alt="">
+        <p></p>
+        <span></span>
+        <ul>
+        </ul>
+    </div>
+    <script>
+    window.onload = function() {
+        var oPic = document.getElementById("pic");
+        var oP = oPic.getElementsByTagName("P")[0];
+
+        var oSpan = oPic.getElementsByTagName("span");
+        var oUl = oPic.getElementsByTagName("ul");
+        var oLi = oPic.getElementsByTagName("li");
+        var oImg = oPic.getElementsByTagName("img");
+        var arryPic = ['images/1.png', 'images/2.png', 'images/3.png', 'images/4.png'];
+        var arrySpan = ['显示第一张图', '显示第二张图', '显示第三张图', '显示第四张图'];
+        var count = 0;
+        //初始化
+        oImg[0].src = arryPic[count];
+        oP.innerHTML = (count + 1) + '/' + arryPic.length;
+        oSpan[0].innerHTML = arrySpan[count];
+
+
+        for (var i = 0; i < arryPic.length; i++) {
+            oUl[0].innerHTML += '<li></li>';
+            oLi[0].className = "active";
+
+        }
+
+
+        var after = 0;
+        for (var i = 0; i < arryPic.length; i++) {
+            oLi[i].index = i;
+            oLi[i].onmouseover = function() {
+                //获取上一个INDEX值，清除上一个INDEX值;
+                oLi[after].className = '';
+                oLi[after] = this;
+                after = this.index;
+                // clear();
+                this.className = 'active';
+
+                oImg[0].src = arryPic[this.index];
+                oSpan[0].innerHTML = arrySpan[this.index];
+                oP.innerHTML = (this.index + 1) + '/' + arryPic.length;
+            }
+
+        }
+
+        function clear() {
+            for (var i = 0; i < arryPic.length; i++) {
+                oLi[i].className = '';
+            }
+
+        }
+    }
+    </script>
+</body>
+
+</html>

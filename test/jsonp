@@ -1,0 +1,29 @@
+jsonp
+js的跨域：
+www.a.com
+www.b.com
+ajax:XMLHttpRequest()不能跨域
+子域与主域之间
+1.document.domain='a.com';
+2.服务器代理“XMLHttpRequest代理文件
+3.script标签:jsonp
+jsonp:json+padding
+利用内填原理，
+box({name:'dd'});
+4.window.name
+www.a.com/c1.html
+www.b.com/c2.html
+window.name='数据'
+jsonp:
+
+function createJs(sUrl){
+	var oScrip=document.createElement('script');
+	oScript.type='text/javascript';
+	oScript.src=sUrl;
+	document.getElementsByTagName('head')[0].appendChild(oScript);
+
+}
+createJ('jsonp.js?callback=box');
+function box(json){
+	alert(json.name)
+}

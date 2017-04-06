@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+</head>
+
+<body>
+<div id="toggle">
+	收起
+</div>
+<div id="content">
+	fsdfsdfsdfsdf
+</div>
+    <script>
+    $(function() {
+        $("#toggle").click(function() {
+            $(this).text($("#content").is(":hidden") ? "收起" : "展开");
+            $("#content").slideToggle();
+        });
+    });
+    </script>
+</body>
+
+</html>

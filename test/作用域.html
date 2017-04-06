@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" name="" value="按钮1" placeholder="">
+	<input type="button" name="" value="按钮2" placeholder="">
+	<input type="button" name="" value="按钮3" placeholder="">
+	<script>
+		window.onload=function(){
+			var oInput=document.getElementsByTagName("input");
+
+			for (var i = 0; i < oInput.length; i++) {
+				oInput[i].index=i;
+				oInput[i].onclick=function(){
+					clear();
+					this.style.backgroundColor="red";
+				}
+			}
+
+			function clear(){
+
+			for (var i = 0; i < oInput.length; i++) {
+					oInput[i].style.backgroundColor="";
+			}				
+			}
+
+		}
+	</script>
+</body>
+</html>

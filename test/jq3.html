@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<title>Document</title>
+</head>
+<body>
+<div class="userState">
+	<label><input type="radio" name="1" value="管理员" placeholder="" checked="">管理员</label>
+	<label><input type="radio" name="1" value="普通用户" placeholder="" >普通用户</label>
+
+</div>
+<div class="state">
+	<a href="#"><p>此处可编辑</p></a>
+</div>
+
+
+
+	<script>
+
+	$("input").click(function(){
+
+		if ($(this).val()=='管理员') {
+
+			$("p").wrap("<a href='#''></a>");
+
+		}else{
+			$("p").unwrap();
+
+		}
+
+	})
+
+
+	</script>
+</body>
+</html>

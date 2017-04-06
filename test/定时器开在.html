@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <style>
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background-color:red;
+        position: absolute;
+        left:10px;
+    }
+    </style>
+</head>
+
+<body>
+    <input id="btn1" type="button" name="" value="按钮" placeholder="">
+    <div id="div1">
+    </div>
+    <script>
+    	var oBtn1=document.getElementById("btn1");
+    	var oDiv1=document.getElementById("div1");
+    	var oLeft=0;
+    	oDiv1.timer=null;
+    	var speed=0;
+    	oBtn1.onclick=function(){
+    		clearInterval(oDiv1.timer);
+    		setInterval(function(){
+     				oLeft=parseInt(GetStyle(oDiv1,'left'));
+    				oDiv1.style.left=oLeft+10+'px';  
+    		if (oLeft>800) {
+    			oLeft=800;
+
+    		}
+    		if (oLeft==800) {
+
+    			clearInterval(oDiv1.timer);
+    		}
+			
+    		}, 200);
+
+    	}
+
+function GetStyle(obj,attr){
+		return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];}
+   
+
+ </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .wrap {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        margin-left: -150px;
+        margin-top: 150px;
+        background-color: #fff;
+    }
+    
+    .titl {
+        width: 300px;
+        background-color: #163859;
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .change {
+        width: 50px;
+        height: 50px;
+        background-color: gray;
+        border-radius: 6px;
+        position: absolute;
+        left: 50%;
+        margin-left: -25px;
+        top: 50%;
+        margin-top: 0px;
+        font-size: 14px;
+        color: #fff;
+        line-height: 50px;
+        text-align: center;
+    }
+    
+    #outerbox {
+        width: 100px;
+        height: 240px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        margin-left: 150px;
+        margin-top: -302px;
+        border: 1px solid #000;
+        font-size: 6px;
+        background-color: #fff;
+        display: none;
+    }
+    
+    ul {
+        overflow: hidden;
+        padding: 0;
+        border: none;
+        margin: 0;
+    }
+    
+    .selectcolor li {
+        list-style-type: none;
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .selectcolor li:nth-child(1) {
+        background-color: red;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+    }
+    
+    .selectcolor li:nth-child(2) {
+        background-color: yellow;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+    }
+    
+    .selectcolor li:nth-child(3) {
+        background-color: blue;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+    }
+    
+    #bg {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    
+    .selectwidth {
+        overflow: hidden;
+    }
+    
+    .selectwidth li {
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: gray;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        line-height: 20px;
+        text-align: center;
+        list-style-type: none;
+        cursor: pointer;
+    }
+    
+    .selectheight {
+        overflow: hidden;
+    }
+    
+    .selectheight li {
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: gray;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        line-height: 20px;
+        text-align: center;
+        list-style-type: none;
+        cursor: pointer;
+    }
+    
+    #width {
+        margin-bottom: 20px;
+    }
+    
+    #outerbox h1 {
+        margin-left: 5px;
+    }
+    
+    .btn {
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+    
+    input[type=button] {
+        background-color: #333;
+        border: none;
+        border-radius: 4px;
+        width: 40px;
+        line-height: 20px;
+        height: 20px;
+        color: #fff;
+        text-align: center;
+        font-size: 6px;
+    }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrap" id="box">
+        <div class="titl" id="tit1">点此设置样式</div>
+        <div class="change" id="change">大白鼠</div>
+    </div>
+    </div>
+    <div id="outerbox">
+        <div id="bg">
+            <h1>选择背景</h1>
+            <ul class="selectcolor" id="color">
+                <li class="red">红</li>
+                <li class="yellow">黄</li>
+                <li class="blue">蓝</li>
+            </ul>
+        </div>
+        <div id="width">
+            <h1>选择宽度</h1>
+            <ul class="selectwidth" id="wid">
+                <li>100</li>
+                <li>200</li>
+                <li>300</li>
+            </ul>
+        </div>
+        <div id="height">
+            <h1>选择高度</h1>
+            <div class="selectheight" id="hei">
+                <li>100</li>
+                <li>200</li>
+                <li>300</li>
+            </div>
+        </div>
+        <hr>
+        <div class="btn">
+            <input type="button" value="恢复">
+            <input type="button" value="确定">
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+        var oTit1 = document.getElementById("tit1");
+        var oTit1Li = oTit1.getElementsByTagName("li");
+        var outerbox = document.getElementById("outerbox");
+        var oChange = document.getElementById("change");
+        var oColor = document.getElementById("color");
+        oTit1.onclick = function() {
+            outerbox.style.display = "block";
+        }
+        oTit1Li.onclick = function() {
+        	var Index=this.index;
+            var Thiscolor = this.style.backgroundColor;
+            console.log(Thiscolor)
+            oChange.style.backgroundColor = Thiscolor;
+        }
+
+
+    }
+    </script>
+</body>
+
+</html>

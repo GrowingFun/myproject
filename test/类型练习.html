@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {
+        alert(1);
+    }, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {
+        alert(3);
+    }];
+    var arrCount = arr.length;
+    var notN = [];
+    var arrN = [];
+    var arrStr = []
+    var Nanposition = [];
+
+
+    for (var i = 0; i < arrCount; i++) {
+        if (typeof arr[i] == 'string') {
+            arrStr.push(arr[i])
+        };
+        // if (Number(arr[i])=='NaN'){notN.push(i)}
+        if (typeof parseInt(arr[i] == 'Number')) {
+            arrN.push(arr[i])
+        };
+    }
+
+    var x = null;
+    for (var i = 0; i < arrN.length; i++) {
+        if (arrN[i] == 'NaN') {
+            notN.push(i);
+        }
+        if (arrN[i] > arrN[i + 1]) {
+            x = arrN[i + 1];
+            arrN[i + 1] = arrN[i];
+            arrN[i] = x;
+
+        }
+    }
+    console.log('字符串:' + arrStr);
+    console.log('notN位置:' + notN);
+    console.log('最大的值:'+arrN[arrN.length-1]);
+    </script>
+</body>
+
+</html>

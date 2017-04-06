@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+    <script>
+    var $title = $('<h1 class="title"></h1>');
+    var $content = $('<div class="content"></div>');
+    $.ajax({
+        url: 'ajax2.json',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            for (var i = 0; i < data.length; i++) {
+                $("wrap").append($title);
+                $(".title").text(data.length[i].title);
+            }
+
+        },
+    })
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1 clss="title"></h1>
+        <div class="content">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/my.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+    .div1 {
+        background-color: red;
+        opacity: 1;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <input id="btn" type="button" name="" value="向前" placeholder="">
+    <input id="btn1" type="button" name="" value="返回" placeholder="">
+    <div id="div" class="div1">
+    </div>
+    <script>
+    var oDiv = document.getElementById("div");
+    // opacityS(oDiv, -0.1,300)
+    var oBtn = document.getElementById("btn");
+    var oBtn1 = document.getElementById("btn1");
+
+    oBtn.onclick = function() {
+        move(oDiv, 10, 500)
+
+    }
+
+    oBtn1.onclick = function() {
+        move(oDiv, -50, 500)
+
+    }
+
+
+
+    function move(obj, step, target) {
+    	clearInterval(obj.timer);
+        var oLeft = parseInt(getStyle(oDiv, 'left'));
+        obj.timer = setInterval(function() {
+            oLeft += step;
+            obj.style.left = oLeft + 'px';
+             console.log(oLeft)
+            if (oLeft > target) {
+                clearInterval(obj.timer);
+            }
+            if (oLeft<10) {
+
+            	 clearInterval(obj.timer);
+
+            }
+
+        }, 100);
+
+    }
+    </script>
+</body>
+
+</html>

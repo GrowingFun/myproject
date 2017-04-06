@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		.div1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		span{
+			display: block;
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+		}
+	</style>
+	<script>
+		
+	$(function(){
+	$("img").load(function(){
+
+		alert($("img").width())
+	})
+
+	})
+
+
+
+			
+
+		
+	</script>
+</head>
+<body>
+<input class="selectAll" type="button" name="" value="全选" placeholder="">
+<input type="checkbox" name="" value="" placeholder="">
+<input type="checkbox" name="" value="" placeholder="">
+<input type="checkbox" name="" value="" placeholder="">
+<input type="checkbox" name="" value="" placeholder="">
+	<script>
+			var onOff=1;
+			$(".selectAll").click(function(){
+				if (onOff) {
+					$("input[type=checkbox]").prop('checked', 'true');
+				}else{
+					$("input[type=checkbox]").removeProp("checked");
+				}
+				onOff=!onOff;
+				
+			})
+
+
+	</script>
+</body>
+</html>

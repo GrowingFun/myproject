@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	//实现在数组中查找某个字符在其中的位置
+	var arr=['w','4','5','0','10','22','ff'];
+	var x='22';
+	function reseach(x){
+		for(var i in arr){
+		if (arr[i]==x) {
+			return i;
+		}else if (i==arr.length-1) {
+			return -1;
+		}
+
+	}
+}
+console.log(reseach(x));
+
+
+</script>	
+</body>
+</html>

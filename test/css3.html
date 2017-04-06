@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css" media="screen">
+		p{
+			height:40px;
+			line-height: 40px;
+			border:1px solid #eee;
+			padding-left:20px;
+			padding-right:20px;
+			font-size:30px;
+		}
+/*		p a{
+			background:url(images/2.png)no-repeat;
+			background-size: 20px 20px;
+			background-position: left center;
+			padding-left:30px;
+			vertical-align: middle;
+			display: inline-block;
+			color:#333;
+		}*/
+/*		p a[href*=doc]{
+			color:red;
+		}
+		p:nth-child(1){
+			background-color:red;
+		}
+		p:nth-child(odd){
+			background-color:#eee;
+		}
+		p:nth-child(even){
+			background-color:#666;
+		}
+		p:nth-child(3n){
+			background-color:blue;
+		}*/
+/*		p:nth-child(2){
+			background-color:red;
+		}*/
+/*		p:nth-of-type(2){
+			background-color:black;
+		}*/
+		span{
+			display: block;
+
+		}
+		p span:only-of-type{
+			background-color:yellow
+		}
+		p *:only-child{
+			color:green;
+		}
+    </style>
+</head>
+
+<body>
+<!-- 结构性味蕾 -->
+<!-- p:nth-child(n)p标签父级中下的第n(从1开始)个子节点（p）,如果中有间有其它元素，这个位置的元素就选不中 -->
+<!-- p:nth-child(even)奇数行选
+p:nth-child(odd)偶数行选 -->
+<!-- p:nth-last-child(1) 从后往前数第N个P节点 -->
+<!-- p:nth-of-type(n)P无素父级下面第N个P元素，如果中间有其它元素，会自动选中下一个P
+ p:nth-last-type(n)从后往前找， -->
+<!-- first-child==nth-child(1) -->
+<!-- last-child==nth-last-child(1) -->
+<!-- first-of-type==nth-of-type(1)
+last-of-type==nth-last-type(1) -->
+<!-- only-of-type:只有唯一个子节点 -->
+    <p>
+        <a href="http://www.baidu.com/doc/ss.html">盗墓笔记</a>
+    </p>
+    <h1>fdfds</h1>
+    <p>
+        <a href="http://www.baidu.com/php/s3.html">盗墓笔记</a>
+        <span>佛挡杀佛</span>
+    </p>
+    <p>
+        <a href="http://www.baidu.com/jpg/ss.html">盗墓笔记</a>
+    </p>
+    <p>
+        <a href="http://www.baidu.com/doc/ss.html">盗墓笔记</a>
+    </p>
+</body>
+
+</html>

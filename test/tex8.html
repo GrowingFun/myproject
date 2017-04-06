@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+<title>Document</title>
+<style>
+ul{
+	list-style-type: none;
+	
+}
+ul:after{
+	content:'';
+	clear:both;
+	display: block;
+}
+ul li{
+	float:left;
+	margin-left:10px;
+	font-size:30px;
+	outline:gray solid 2px;
+	outline-offset: 6px;
+}
+
+li+li{
+	background-color:red;
+}
+li[value*="ww"]{
+	transition:transform 2s;
+}
+li[value*="ww"]:hover{
+	background-color:blue;
+	transform:rotate(90deg);
+/*	transform: translate(50px,100px);*/
+
+transform: rotateY(360deg);
+}
+.firstli {
+	width:200px;
+	height:200px;
+	border-image:url(images/4.jpg) 50 50 round;
+	-moz-border-image:url(images/4.jpg) 50 50  round;
+	-ms-border-image:url(images/4.jpg) 50 50 round;
+	-o-border-image:url(images/4.jpg) 50 50  round;
+}
+@keyframes kk{
+	from{background-color:red;}to{
+		background-color:yellow;
+	}
+}
+li[value="ww"]{
+	animation:kk 5s;
+	-moz-animation:kk 5s;
+	-o-animation:kk 5s;
+	-webkit-animation:kk 5s;
+}
+
+</style>
+		
+</head>
+
+<body>
+<div	id="div1">ddd
+		<ul >
+			<li class="firstli">标题1
+
+			</li>
+			<li value="ww" onclick="hide(this)" id="liid">标题2</li>
+			<li value="qqww">标题3</li>
+			<li value="wwp">标题4</li>
+		</ul>
+</div>	
+<script>
+//	$.parseJSON()：把JSON类型的字符串，转换成真正的JSON数据;	
+//var a='{"name":"hello","age":"20"}'
+//var json=$.parseJSON(a)//只能针对 JSON类型的数据;
+//console.log(json)
+//console.log(json.name)
+//$.parseHTML():转化HTML的形式的字符串，转成DOM节点，放到一个数组中
+//$.parseXML() :作用把XML形式的字符串，转成真正的XML节点
+
+
+	var onput=document.getElementById("div1");
+
+	console.log(onput)
+	console.log(document.getElementsByTagName("li"));
+	console.log(document.getElementsByClassName("firstli"));
+	var para=document.createElement("p");
+	var xx=onput.appendChild(para);
+	var colorx=(xx.innerHTML="fdsfsdfdsf");
+	colorx.style.color="red"
+
+function hide(id){
+ id.innerHTML="black";
+}
+
+
+// var xx=getElementsByTagName("li");
+// console.log(xx[0]);
+</script>
+
+</body>

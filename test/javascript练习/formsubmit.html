@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    span{
+    	color: red;
+    	position: absolute;
+    	top: 20px;
+    	left: 35px;
+    	
+  
+    }
+    .control{
+    	margin-bottom: 30px;
+    	position: relative;
+      
+    }
+    </style>
+</head>
+
+<body>
+    <form action="formsubmit_submit" method="get" accept-charset="utf-8">
+        <div class="control">
+            <label>姓名</label>
+            <input type="text" name="" value="" placeholder="">
+        </div>
+        <div class="control">
+            <label>性别</label>
+            <input type="text" name="" value="" placeholder="">
+        </div>
+        <div class="control">
+        	<input type="submit" name="" value="提交" placeholder="">
+        </div>
+    </form>
+    <script>
+    	$("form").submit(function(event) {
+    		var on=1;
+    		$(this).find('input').each(function(index, el) {
+    			if ($(this).val()=="") {
+    				on=0;
+    				$(this).after("<span>不能为空</span>");
+    			}
+    		});
+    		if (!on) {
+    			return false;
+    		}
+    	});
+    	$("input[type=text]").bind("input propertychange",function(){
+    		if ($(this).val()) {
+    			$(this).next("span").css({
+    				display: 'none'
+    			});
+    		}
+    	})
+
+ </script>
+</body>
+
+</html>

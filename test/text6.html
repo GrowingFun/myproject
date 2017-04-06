@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <label>
+        <input type="checkbox" name="" value="" onclick='xx(this)' placeholder="">
+    </label>
+    <label>
+        <input type="checkbox" name="" value="" onclick='xx(this)' placeholder="">
+    </label>
+    <script>
+
+
+
+
+    function xx(obj) {
+
+    	if ($(obj).attr("checked")) {
+    		clear(obj);
+    	}else{
+    		obj.checked='checked';
+    	}
+    }
+
+
+
+    function clear(obj) {
+        $("label").each(function(index, el) {
+        $(this).find('input').removeAttr("checked");
+
+        });
+
+    }
+    </script>
+</body>
+
+</html>

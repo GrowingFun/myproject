@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+    	margin:0;
+    	border:none;
+    	padding:0;
+    }
+    ul{
+    	
+    	width:1000px;
+    	height:800px;
+    	border:1px solid red;
+    	float:left;
+    	margin-left:50px;
+    	margin-top:200px;
+    }
+		li{
+			list-style-type: none;
+			width:200px;
+			height:200px;
+			position: relative;
+			float:left;
+			margin-right:10px;
+			
+
+		}	
+	img{
+		width:200px;
+		height:200px;
+	}
+
+		div{
+			width:200px;
+			position: absolute;
+			background-color:#ccc;
+			border:1px solid blue;
+			height:200px;
+			color:#fff;
+			text-align:left;
+			box-sizing: border-box;
+			top:-200px;
+			display: none;
+			z-index: 1;
+			
+		}
+
+    	
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li>
+        	<img src="images/1.jpg" alt="">
+            <div><百度地图API-首页/div>
+        </li>
+        <li>
+       		 <img src="images/2.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+        <li>
+       		 <img src="images/3.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+        <li>
+      		  <img src="images/4.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+                <li>
+        	<img src="images/1.jpg" alt="">
+            <div><百度地图API-首页/div>
+        </li>
+        <li>
+       		 <img src="images/2.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+        <li>
+       		 <img src="images/3.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+        <li>
+      		  <img src="images/4.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+                <li>
+        	<img src="images/1.jpg" alt="">
+            <div><百度地图API-首页/div>
+        </li>
+        <li>
+       		 <img src="images/2.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+        <li>
+       		 <img src="images/3.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+        <li>
+      		  <img src="images/4.jpg" alt="">
+            <div>百度地图API-首页</div>
+        </li>
+    </ul>
+    <script>
+    	var oList=document.getElementById("list");
+    	var oLi=oList.getElementsByTagName("li");
+
+    	for (var i = 0; i < oLi.length; i++) {
+    		oLi[i].onmouseover=function(){
+    			this.getElementsByTagName("div")[0].style.display="block";
+
+    		}
+    		oLi[i].onmouseout=function(){
+    			this.getElementsByTagName("div")[0].style.display="none";
+
+    		}
+
+    	}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+*{
+	margin:0;
+	padding:-2;
+}
+#container {
+	height:200px;
+	width:200px;
+	position:relative;
+	left:-200px;
+	background-color:red;
+}
+#btn {
+	height:50px;
+	width:25px;
+	position: absolute;
+	left:200px;
+	top:75px;
+	background-color:blue;
+	
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text" maxLength="10" />
+    <input type="submit" value="提交">
+    <script>
+    var oText = document.getElementById("text");
+    oText.addEventListener("invalid", fn, false)
+
+    function fn() {
+        alert(this.validity.valid)
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		li{
+			width:130px;
+			height:130px;
+			background-color:red;
+			float:left;
+			list-style-type: none;
+			margin-left:10px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script>
+		window.onload=function(){
+			var oLi=document.getElementsByTagName("li");
+			for (var i = 0; i < oLi.length; i++) {
+				oLi[i].btn=true;
+				oLi[i].onclick=function(){
+					if (this.btn==true) {
+						this.style.backgroundColor="blue";
+						this.btn=false;
+
+					}else{
+
+						this.style.backgroundColor="red";
+						this.btn=true;
+					}
+					
+				}
+			}
+		}
+	</script>
+</body>
+</html>

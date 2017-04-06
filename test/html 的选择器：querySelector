@@ -1,0 +1,7 @@
+html 的选择器：querySelector
+querySelector
+var oDiv=document.querySelector('.box');只能选择一组中的第一个元素  标签ID类都可以选择
+querySelectorAll('.box')获取一组元素
+
+选择class
+getElementByClassName(class);

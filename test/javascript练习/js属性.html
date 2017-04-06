@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<input type="text" name="" value="" placeholder="" id="text">
+	<select name=""  id="select">
+		<option value="北京">北京</option>
+		<option value="上海">上海</option>
+		<option value="杭州">杭州</option>
+	</select>
+	<input id="btn1" type="button" name="" value="按钮" placeholder="">
+	<script>
+
+		var oBtn1=document.getElementById("btn1");
+		var oSelect=document.getElementById("select");
+		var oText=document.getElementById("text");
+		oText.value=oSelect.value;
+		oBtn1.onclick=function(){
+			oText.value=oSelect.value;
+		}
+
+	</script>
+</body>
+</html>

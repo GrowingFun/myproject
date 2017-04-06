@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<input type="text" id="name1" name="" value="" placeholder="">
+<script language="javascript" charset="GB2312">
+function getQueryString(key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    var result = window.location.search.substr(1).match(reg);
+    return result ? decodeURIComponent(result[2]) : null;
+}
+
+console.log(getQueryString('username'))
+
+var oName1 = document.getElementById("name1");
+oName1.value=getQueryString('username');
+
+
+
+
+</Script>
+</body>
+
+</html>

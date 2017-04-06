@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body{
+    	margin: 0;
+    	padding: 0;
+    }
+    .title{
+    	margin-left: 20px;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        margin-left: 20px;
+    }
+    
+    input[type=button] {
+        background-color: red;
+        color: #fff;
+        border: none;
+        width: 80px;
+        line-height: 30px;
+    }
+    
+    #showBox {
+        width: 300px;
+        height: 250px;
+        border: 10px solid rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -150px;
+
+        margin-top: -110px;
+        display: none;
+    }
+    
+    h3,
+    span {
+        display: inline-block;
+    }
+    
+    #green {
+        width: 30px;
+        height: 30px;
+        background-color: green;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    #yellow {
+        width: 40px;
+        height: 30px;
+        background-color: yellow;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    #blue {
+        width: 30px;
+        height: 30px;
+        background-color: blue;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .lin2 span,
+    .lin3 span {
+        display: inline-block;
+        background-color: #999;
+        border: 1px solid #eeeeee;
+        width: 40px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        cursor: pointer;
+    }
+    
+   .btn{
+   	width: 180px;
+   	margin: 0 auto;
+   }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h2>请为下面的DIV设置样式：<input type="button" value="点击查看" id="look"></h2>
+    </div>
+    <div class="box" id="box">
+    </div>
+    <div id="showBox">
+        <div class="lin1">
+            <h3>请选择背景:
+			<span id="green"></span>
+			<span id="yellow"></span>
+			<span id="blue"></span>
+			</h3>
+        </div>
+        <div class="lin2">
+            <h3>请选择宽度:
+			<span id="yiW">100</span>
+			<span id="erW">200</span>
+			<span id="sanW">300</span>
+			</h3>
+        </div>
+        <div class="lin3">
+            <h3>请选择高度:
+			<span id="erH">200</span>
+			<span id="siH">400</span>
+			<span id="liuH">600</span>
+			</h3>
+        </div>
+        <div class="btn">
+        <input type="button" name="" value="确定" placeholder="" id="sure">
+       <input type="button" name="" value="取消" placeholder="" id="cancal">
+        	
+        </div>
+    </div>
+    <script>
+    var oLook=document.getElementById("look");
+    var oSure=document.getElementById("sure");
+    var oCancal=document.getElementById("cancal");
+    var oBox = document.getElementById("box");
+    var oShowBox = document.getElementById("showBox");
+     var oGreen = document.getElementById("green");
+     var oYellow = document.getElementById("yellow");
+     var oBlue = document.getElementById("blue");
+     var oYiW = document.getElementById("yiw");
+     var oerW = document.getElementById("erW");
+     var osanW = document.getElementById("sanW");
+     var oerH = document.getElementById("erH");
+      var osiH = document.getElementById("siH");
+       var oliuH = document.getElementById("liuH");
+       oGreen.onclick=function(){
+       	oBox.style.background="green";
+       }
+        oYellow.onclick=function(){
+       	oBox.style.background="yellow";
+       }
+         oBlue.onclick=function(){
+       	oBox.style.background="blue";
+       }
+       oLook.onclick=function(){
+       	oShowBox.style.display="block";
+       }
+       oSure.onclick=function(){
+       	oShowBox.style.display="none";
+       }
+       oCancal.onclick=function(){
+       	oBox.style.background="";
+       }
+    </script>
+</body>
+
+</html>

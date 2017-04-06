@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul>li {
+        list-style-type: none;
+        float: left;
+        width: 24px;
+        height: 24px;
+        padding-right: 10px;
+        background-repeat: no-repeat;
+    }
+    
+    .clearfix {
+        clear: both;
+    }
+    
+    h2 {
+        float: left;
+        color: #666;
+    }
+    
+    .ping {
+        margin-top: 40px;
+        margin-left: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ping">
+        <h2>总体评价:</h2>
+        <ul>
+            <li style="background-image: url(img/star-off-big.png)
+            "></li>
+            <li style="background-image: url(img/star-off-big.png)
+            "></li>
+            <li style="background-image: url(img/star-off-big.png)
+            "></li>
+            <li style="background-image: url(img/star-off-big.png)
+            "></li>
+            <li style="background-image: url(img/star-off-big.png)
+            "></li>
+            <div class="clearfix"></div>
+        </ul>
+    </div>
+    <script>
+    var aLi = document.getElementsByTagName("li");
+    for (var i = 0; i < aLi.length; i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function() {
+            var That = this;
+            focuse(That);
+        }
+        aLi[i].onmouseout = function() {
+            var That = this;
+            unfocuse(That);
+        }
+        aLi[i].onclick = function() {
+            var That = this;
+            focuse(That);
+
+        }
+
+
+        function focuse(That) {
+            for (var j = 0; j <= That.index; j++) {
+                aLi[j].style.backgroundImage = 'url(img/star-on-big.png)';
+            }
+        }
+
+        function unfocuse(That) {
+            for (var j = 0; j <= That.index; j++) {
+                aLi[j].style.backgroundImage = 'url(img/star-off-big.png)';
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		window.onload=function(){
+			var oIframe=document.createElement("iframe");
+			oIframe.src="iframe1.html";
+			document.body.appendChild(oIframe);
+			oIframe.onload=function(){
+				alert(1233)
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="js/vue.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+<style type="text/css" media="screen">
+	.first{
+		width:100px;
+		margin-bottom: 20px;
+		position: relative;
+		color:#fff;
+		cursor:pointer;
+	}
+
+	.second {
+		background-color:green;
+		margin-bottom: 20px;
+	}
+	
+	.seUl{
+		display: none;
+		position: absolute;
+		left:160px;
+		border:1px solid gray;
+		top:0;
+		width:200px;
+	}
+	img{
+		width:200px;
+		height:40px;
+		position: absolute;
+		left:0;
+		z-index: 0;
+		top:0;
+	}
+	a{
+		color:#Fff;
+		font-size: 30px;
+		position: relative;
+		z-index: 10;
+		text-decoration: none;
+		text-align:center;
+		display: block;
+	}
+</style>
+</head>
+
+<body>
+	<ul class="fiUl">
+		<li class="first">
+			<a href="javascript:void(0);">fdsaf</a>
+			<img src="images/2.png" alt="">
+			<ul class="seUl">
+				<li class="second">
+					<a href="javascript:void(0);">fdsaf</a>
+				</li>
+				<li class="second">
+					<a href="javascript:void(0);">fdsaf</a>
+				</li>
+				<li class="second">
+					<a href="javascript:void(0);">fdsaf</a>
+				</li>
+			</ul>
+		</li>
+				<li class="first">
+			<a href="javascript:void(0);">fdsaf</a>
+			<img src="images/2.png" alt="">
+			<ul class="seUl">
+				<li class="second">
+					<a href="javascript:void(0);">fdsaf</a>
+				</li>
+				<li class="second">
+					<a href="javascript:void(0);">fdsaf</a>
+				</li>
+				<li class="second">
+					<a href="javascript:void(0);">fdsaf</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+<script>
+	$(".first").mouseenter(function(event) {
+		$(this).find(".seUl").css("display","block");
+	});
+		$(".first").mouseleave(function(event) {
+		$(this).find(".seUl").css("display","none");
+	});
+</script>
+</body>
+
+</html>
