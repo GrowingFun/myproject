@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="text" name="username" value="">
+<input type="text" name="age" value="">
+<input type="button" name="" value="提交" id="btn">
+
+
+
+	<script>
+		var oBtn=document.getElementById("btn");
+		oBtn.onclick=function(){
+			var xhr=null;
+			try{
+				xhr=new XMLHttpRequest();
+			}catch(e){
+				xhr=new ActiveXObject("Microsoft.XMLHTTP");
+
+			}
+			//缓存问题，可以在URL后面连接一个随机数
+			//乱码，编码encodeURL
+			xhr.open('post','1.php',true);
+			//POST方式的时候数据放在send()方法里作为参数传过去，没有缓存
+			xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')
+			xhr.send('username=要&age=40');
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if (xhr.status==200) {
+						alert(xhr.responseText)
+					}else{
+						alert(xhr.status)
+					}
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

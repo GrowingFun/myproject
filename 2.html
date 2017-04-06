@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+    </div>
+    <script>
+    var oDiv = document.getElementsByTagName("div")[0];
+    $.ajax({
+            url: 'json.json',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                function(data) {
+                    for (var attr in str) {
+                        console.log(str[attr])
+                        oDiv.innerHTML += str[attr];
+                    }
+                }
+
+            },
+        })
+        .done(function() {
+            console.log("success");
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+    </script>
+</body>
+
+</html>

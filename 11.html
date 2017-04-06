@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-2.2.3.min.js" type="text/javascript" charset="utf-8" ></script>
+    <style type="text/css" media="screen">
+
+    html {
+        height: 100%;
+    }
+    
+    body {
+        height: 100%;
+    }
+    
+    .box {
+        display: -webkit-box;
+        height: 100%;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+    }
+    
+    .box div {
+        width: 200px;
+        height: 200px;
+        box-shadow: 0 0 40px red;
+        border-radius: 10px;
+        transition: 1s;
+    }
+    
+    .box div:hover {
+        box-shadow: 0 0 100px red;
+        opacity: 0.5;
+    }
+    
+    img {
+        display: block;
+        margin: 200px;
+        -webkit-box-reflect: below 5px -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 100%);
+    }
+    
+    .box1 {
+        width: 100px;
+        height: 30px;
+    }
+    
+    .box2 {
+        width: 300px;
+        height: 300px;
+    }
+    </style>
+</head>
+
+<body>
+<!--     <div class="box">
+        <div></div>
+    </div>
+    <img width="200" height: "200" src="images/IMG_7748.png" alt="">
+    <div class="box1">
+    </div>
+    <div class="box2"></div> -->
+    <div class="check">
+    	<label><input type="checkbox">22</input></label>
+    	<label><input type="checkbox">33</label>
+    	<label><input type="checkbox">44</label>
+    	<label><input type="checkbox">55</label>
+    	
+    </div>
+    <script>
+
+// var json = [
+// {"id":"1","tagName":"apple"},
+// {"id":"2","tagName":"orange"},
+// {"id":"3","tagName":"banana"},
+// {"id":"4","tagName":"watermelon"},
+// {"id":"5","tagName":"pineapple"}
+// ];
+
+
+
+
+$.each($("input"), function(idx, obj) {
+
+	console.log(obj.indexOf())
+});
+
+    </script>
+</body>
+
+</html>

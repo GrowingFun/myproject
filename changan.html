@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<style type="text/css" media="screen">
+		a:active{
+			background-color: #eee;
+		}
+		a{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+		}
+		
+	</style>
+</head>
+<body>
+<div style="width:100%;">
+    <div style="width:90%; height:200px; background-color:#CCC;font-size:100px">
+
+    <p id="touchArea" >长按我</p>
+	 <a style="font-size:30px;">删除</a>
+    </div> 
+   
+</div>
+<script>
+window.ontouchstart = function(e) { e.preventDefault(); }; 
+$("a").hide();
+var timeOutEvent=0;
+$(function(){
+	$("#touchArea").on({
+		touchstart: function(e){
+			timeOutEvent = setTimeout("longPress()",500);
+		 	e.preventDefault();
+		},
+		touchmove: function(){
+            	clearTimeout(timeOutEvent); 
+		    	timeOutEvent = 0; 
+		},
+		touchend: function(){
+	   		clearTimeout(timeOutEvent);
+			if(timeOutEvent!=0){ 
+			    alert("你这是点击，不是长按"); 
+			} 
+			return false; 
+		}
+	})
+});
+
+ 
+function longPress(){ 
+    timeOutEvent = 0; 
+    $("a").show();
+} 
+$("a").on('click',function(){
+	$(this).closest('div').remove();
+})
+
+
+</script>
+</body>
+</html>
+

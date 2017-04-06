@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<input type="button" name="" value="切换" id="btn1">
+<input type="button" name="" value="切换1" id="btn2">
+	<iframe src="demo1.html" id=iframe></iframe>
+	<script>
+window.onload=function(){
+		var oIfrmae=document.getElementById("iframe");
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		changeHeight();
+		oBtn1.onclick=function(){
+			oIfrmae.src="demo1.html";
+						setTimeout(function(){
+				changeHeight();
+			},500)
+		}
+		oBtn2.onclick=function(){
+			oIfrmae.src="demo2.html";
+			setTimeout(function(){
+				changeHeight();
+			},500)
+			
+		}		
+		function changeHeight(){
+			oIfrmae.height=oIfrmae.contentWindow.document.body.offsetHeight;
+		}
+}
+	</script>
+
+</body>
+</html>

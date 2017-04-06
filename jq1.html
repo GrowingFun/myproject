@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        padding: 200px;
+    }
+    
+    ul {
+        list-style-type: none;
+        position: relative;
+        width: 400px;
+        height: 200px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    ul li:nth-of-type(1) {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    img {
+        width: 400px;
+        height: 200px;
+    }
+    
+    li {
+        position: absolute;
+    }
+    
+    .btn span {
+        float: left;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        margin-right: 4px;
+    }
+    
+    .btn {
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        margin-left: -50px;
+    }
+    .btn:after{
+    	display: block;
+    	line-height: 0;
+    	clear: both;
+    }
+    
+    .banner {
+        position: relative;
+        width: 400px;
+        height: 200px;
+    }
+    
+    .btn span.active {
+        background-color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul>
+            <li class="first">
+                <img src="images/IMG_7748.png" alt="">
+            </li>
+            <li>
+                <img src="images/IMG_7856.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/IMG_7858.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/IMG_89841.png" alt="">
+            </li>
+            <li>
+                <img src="images/_MG_7716.png" alt="">
+            </li>
+        </ul>
+        <div class="btn">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+
+
+    $("li").not(".first").each(function() {
+        $(this).css("left", '400px');
+    })
+
+    $(".btn").find("span").click(function(){
+    	$(this).addClass('active').siblings("span").removeClass("active");
+    	var index=$(this).index();
+    	$("li").eq(index).animate({"left":0},300);
+    	eachL(index-1);
+
+    })
+    
+   function eachL(index){
+    $("li").not($("li").eq(index)).each(function() {
+        $(this).css("left", '400px');
+    })}
+    </script>
+</body>
+
+</html>
