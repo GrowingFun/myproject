@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+/*	search:正则去匹配字符串，如果匹配成功，返回位置，如果失败返回-1; 语法:字符串.search（正则）正则默认区别大小写的，特殊可以不区分大小写*/
+var str='abckef';
+var re=/F/i;
+/*alert(str.search(re))*/
+/*不区分大小写在正则最后加上标识 i*/
+var str2="fljshfsdfRfjkelsjf"
+var re2=new RegExp("r",'i')
+alert(str2.search(re2))
+</script>
+	
+</body>
+</html>

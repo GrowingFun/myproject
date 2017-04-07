@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    var str = '43fdsf6654fsfdsdf4535';
+    console.log(typeof(str))
+
+    var strX = findNum(str);
+    console.log(strX)
+
+    function findNum(obj) {
+        var str2 = [];
+        var tmp = '';
+        for (var i = 0; i < obj.length; i++) {
+            if (obj.charAt(i) >= '0' && obj.charAt(i) <= '9') {
+                tmp += obj.charAt(i);
+            } else {
+                if (tmp) {
+                    str2.push(tmp);
+                    tmp = '';
+                }
+            }
+            if (tmp) {
+                str2.push(tmp);
+                tmp = '';
+            }
+        }
+
+        return str2;
+    }
+    </script>
+</body>
+
+</html>

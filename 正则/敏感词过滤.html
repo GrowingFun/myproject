@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<label for="">替换前</label>
+<textarea id="tx1">你好我是谁谁不好不好，中国美国</textarea>
+<br>
+<label for="">替换后</label>
+<textarea id="tx2"></textarea>
+<input id="btn" type="button" name="" value="确定">
+	<script>
+	/*replace第二个参数，可以是字符串，也可是回调函数,函数第一个参数就是匹配成功的第一对字符*/
+		window.onload=function(){
+			var oBtn=document.getElementById("btn");
+			var oTx1=document.getElementById("tx1");
+			var oTx2=document.getElementById("tx2");
+			var oTx1Value='';
+			var oTx2Value='';
+			oBtn.onclick=function(){
+				oTx1Value=oTx1.value;
+				var re=/美国|不好/g;
+				oTx2Value=oTx1Value.replace(re,function(str){
+					/*return '*';*/
+					var result='';
+					for (var i = 0; i < str.length; i++) {
+						result+='*';
+					}
+					return result;
+				});
+				oTx2.value=oTx2Value;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    var str = 'fdsfsdf44223gkjd00fdsfsdf56456gdgfdsg46456';
+    var arr = [];
+    var tmp = '';
+    /*	alert(finNum())
+    		function finNum(){
+    			return str.match(/\d+/g);
+    		}*/
+    /*正则都是操作字符串的*/
+    /*正则写法*/
+    var arr=new Array();
+    var obj=new Object();
+    var re=new RegExp('a');/*正则对象*/
+    var rex=/a/;/*正则简写性能好;*/
+    /*正则表达式常用方法*/
+    /*test正则方法,去匹配字符串，成功为真，失败为假*/
+    var str2='abcdef';
+    var re=/bf/;
+    var str5='';
+    alert(re.test(str2))/*在字符串中找到正则里面的字符串*/
+    var str4='34242345354DVVV  35345FDSF43';
+    var re2=/\s/;
+    if (re2.test(str4)) {
+    	alert("yes")
+    }else{
+    	alert("no")
+    }
+    for (var i = 0; i < str4.length; i++) {
+    	if (!re2.test(str4.charAt(i))) {
+    		str5+=str4.charAt(i);
+    	}
+    }
+    console.log(str5)
+/*
+
+\s:空格
+\S:非空格
+\d:数字
+\D:非数字 
+\w:字符
+\W:非字符
+|:或
+g全局
++一个或更多
+
+*/
+
+
+    </script>
+</body>
+
+</html>

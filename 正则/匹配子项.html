@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*匹配子项:小括号（）还有一个意思是分组操作
+		把正则整体叫做(母亲)
+		然后把左边第一个小括号里面的正则，叫做这个第一个子项（母亲的第一个孩 子）
+		第一个括号为第一个子项
+		第二个括号为第二个子项。。。。以此类推
+		*/
+		var str='2013-12-23';
+		var str2='18271808308';
+		var str3='14682157306';
+
+		var re=/(1)(3)\d+/g;
+		console.log(re.test(str3));
+		alert(str.replace(re,function(x){
+			alert(x)
+		}))
+
+
+	</script>
+</body>
+</html>

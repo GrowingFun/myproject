@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*match方法，正则去匹配字符串，如果区配成功就返回匹配成功的数组，如果不成功就返回空null     语法：字符串.match(正则)*/
+
+		/*正则匹配成功就会结束，不会继续 如果想全部查找，就需要加标识符  g(全局匹配)
+		量词：匹配不确定的位置
+		+代表着至少出现一次。
+
+		*/
+		var str="fsdfdslfhlofdsl666fsdfsdf534gfdg675";
+		var re=/\d+/g;
+		alert(str.match(re))
+		var str3=str.match(re);
+		console.log(str3)
+	</script>
+</body>
+</html>
