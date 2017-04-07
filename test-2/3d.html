@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		body{
+			padding: 200px;
+		}
+		.wrap{
+			perspective:500px;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background: red;
+
+			transition: 5s;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+		}
+		
+	</style>
+</head>
+<body>
+<!-- perspective景深需要加给父级，才能体现近大远小 -->
+<div class="wrap">
+	
+
+	<div class="box1"></div>
+	<div class="box2">
+	</div>	
+	</div>
+	<textarea name="" style="width:100px;overflow-y:visible; "></textarea>
+	<script>
+		var aDiv=document.querySelectorAll('div');
+		var on=true;
+		setInterval(function(){
+			if (on) {
+				aDiv[1].style.WebkitTransform=aDiv[1].style.transform="rotateX(360deg)"
+			}else{
+				aDiv[1].style.WebkitTransform=aDiv[1].style.transform="rotateX(-360deg)"
+			}
+			on=!on;
+			
+		},2000);
+
+
+	</script>
+</body>
+</html>

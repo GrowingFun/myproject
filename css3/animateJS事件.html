@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        /* animation: 2s move 1s ease-in infinite */
+        /* alternate偶数倒序 */
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    
+    .wrap {
+        width: 400px;
+        height: 400px;
+        border: 1px solid red;
+        position: relative;
+    }
+    
+    @-webkit-keyframes move {
+        0% {
+            left: 0;
+        }
+        50% {
+            left: 100px;
+        }
+        100% {
+            left: 300px;
+        }
+    }
+     @keyframes move {
+        0% {
+            left: 0;
+        }
+        50% {
+            left: 100px;
+        }
+        100% {
+            left: 300px;
+        }
+    }
+    .move{
+    	-webkit-animation: 2s move ease-in;
+    	animation: 2s move ease-in;
+    	left: 300px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box" id="box">
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+        var oBox = document.getElementById("box");
+        oBox.onclick = function() {
+        	this.className="move box";
+            addEnd(this, fn)
+        }
+
+    function fn() {
+        this.className="box";
+    }
+/*animation结束*/
+    function addEnd(obj, fn) {
+        obj.addEventListener('webkitAnimationEnd', fn, false)
+        obj.addEventListener('animationend', fn, false)
+    }
+  }
+    </script>
+</body>
+
+</html>

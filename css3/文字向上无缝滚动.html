@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .wrap {
+        width: 400px;
+        height: 50px;
+        position: relative;
+        border: 1px solid #333;
+        margin: 100px auto 0;
+       overflow: hidden; 
+    }
+    
+    .list {
+    
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 50px;
+        list-style-type: none;
+        animation: 15s move linear infinite;
+    }
+    
+    .list li {
+        line-height: 50px;
+        color: #333;
+        height: 50px;
+      
+        font-size: 30px;
+        border: 1px solid #fff;
+        width: 400px;
+        text-align: center;
+    }
+     .list:hover{
+          -webkit-animation-play-state: paused;
+     }
+    
+    @-webkit-keyframes move {
+        0% {
+            top: 0;
+        }
+        100% {
+            top: -400px;
+        }
+    }
+    
+    @keyframes move {
+        0% {
+            top: 0;
+        }
+        100% {
+            top: -400px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="list">
+            <li><p>1fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+            <li><p>2fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+            <li><p>3fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+            <li><p>4fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+            <li><p>5fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+            <li><p>6fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+            <li><p>7fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+            <li><p>8fdsfsdfdsfdsfdsfffffffffffffffffffffffffsfsdf</p></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+	<title>Document</title>
+	<script>
+/*	var m1=angular.module("myApp",[]);
+	m1.controller("Aaa",function($scope){
+		$scope.name="hello";
+	})
+	m1.controller("Bbb",function($scope){
+		$scope.name="你好";
+	})*/
+	/*解决压缩问题把scope写成数据形式*/
+	var m1=angular.module("myApp",[]);
+	m1.controller("Aaa",["$scope",function($scope){
+		$scope.name="hello";
+	}])
+	m1.controller("Bbb",["$scope",function($scope){
+		$scope.name="你好";
+	}])
+/*
+	function Aaa($scope){
+			$scope.name="你好";
+		}
+		function Bbb($scope){
+			$scope.name="HI"
+		}*/
+	</script>
+</head>
+<body>
+<div ng-controller="Aaa">
+	<span>{{name}}</span>
+</div>
+<div ng-controller="Bbb">
+	<span>{{name}}</span>
+	
+</div>
+</body>
+</html>

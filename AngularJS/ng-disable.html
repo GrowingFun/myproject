@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>Document</title>
+    <script>
+    var m1 = angular.module("app", []);
+    m1.controller("Aaa", ["$scope", "$interval", function($scope, $interval) {
+        $scope.text = "发送验证码";
+        $scope.setTime = function() {
+            var iNow = 10;
+            $scope.text = iNow + "秒";
+            $scope.isDisabled = true;
+            var time = $interval(function() {
+                iNow--;
+                if (iNow == 0) {
+                    $scope.text = "重新发送";
+                    $scope.isDisabled = false;
+                    $interval.cancel(time);
+                } else {
+
+                    $scope.text = iNow + "秒";
+                }
+            }, 1000)
+        }
+
+    }])
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <input type="button" ng-disabled="isDisabled" value="{{text}}" ng-click="setTime()">
+        <span>{{aaa}}</span>
+    </div>
+</body>
+
+</html>

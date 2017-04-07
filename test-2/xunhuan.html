@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		document.body.innerHTML='<input type="button" value="按钮"/><input type="button" value="按钮"/><input type="button" value="按钮"/><input type="button" value="按钮"/>'
+		var oInput=document.getElementsByTagName("input");
+		var count=oInput.length;
+		var array=['今天','明天','后天','大后天'];
+		for (var i = 0; i < count; i++) {
+			oInput[i].value=array[i];
+
+		}
+
+	</script>
+</body>
+</html>

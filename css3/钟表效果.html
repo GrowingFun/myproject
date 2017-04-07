@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body{
+        padding: 0;
+        margin: 0;
+         background:#000;
+
+    }
+    .wrap {
+        width:300px;
+        height: 300px;
+        
+        border-radius: 50%;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 200px;
+        background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490879175797&di=ef7f90f5d4648b810bdf2c9a069ee104&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F17%2F89%2F85%2F55a7319380ca3_1024.jpg')no-repeat center center;
+        background-size: cover;
+        background-origin: border-box;
+        background-clip: border-box;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+    }
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    li {
+        width: 2px;
+        height: 5px;
+        background: #333;
+        position: absolute;
+        left: 149px;
+        top: 0;
+        color: red;
+        -webkit-transform-origin: center 150px;
+    }
+    li span{
+        display: inline-block;
+        margin: 10px;
+        font-weight: 600;
+    }
+    
+/*     ul li:first-child {
+    transform: rotate(0deg);
+}
+
+ul li:nth-child(2) {
+    transform: rotate(6deg);
+}
+
+ul li:nth-child(3) {
+    transform: rotate(12deg);
+}
+
+ul li:nth-child(4) {
+    transform: rotate(18deg);
+}
+
+ul li:nth-child(5) {
+    transform: rotate(24deg);
+}
+
+ul li:nth-child(6) {
+    transform: rotate(30deg);
+}
+
+ul li:nth-child(7) {
+    transform: rotate(36deg);
+}
+
+ul li:nth-child(8) {
+    transform: rotate(42deg);
+} */
+    
+    ul li:nth-of-type(5n+1) {
+        height: 12px;
+    }
+    
+    #hour {
+        width: 6px;
+        height: 60px;
+        background: #333;
+        position: absolute;
+        left: 147px;
+        top: 90px;
+        -webkit-transform-origin: bottom;
+        z-index: 2;
+    }
+    
+    #min {
+        width: 4px;
+        height: 100px;
+        background: #333;
+        position: absolute;
+        left: 150px;
+        top: 50px;
+        -webkit-transform-origin: bottom;
+    }
+    
+    #sec {
+        width: 2px;
+        height: 120px;
+        background: red;
+        position: absolute;
+        left: 149px;
+        top: 30px;
+        -webkit-transform-origin: bottom;
+    }
+    
+    .cir {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -8px;
+        top: 50%;
+        margin-top: -10px;
+        background: #333;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var oUl = document.getElementById("ul");
+        var oHour = document.getElementById("hour");
+        var oMin = document.getElementById("min");
+        var oSec = document.getElementById("sec");
+        oUl.innerHTML=addLi();
+        var Li=oUl.getElementsByTagName('li');
+        rotateM();
+        setInterval(ToTime, 1000);
+
+        /* 添加li*/
+        function addLi() {
+             var aLi='';
+             var j=0;
+            for (var i = 1; i <73; i++) {
+                
+                if (i%5==0&&(j<12)) {
+                    j++;
+                    aLi += '<li><span>'+j+'</span></li>';
+                }else{
+                    aLi += '<li></li>';
+                }
+            }
+            return aLi;
+        }
+        function rotateM(){
+            for (var i = 0; i < Li.length; i++) {
+                Li[i].style.WebkitTransform="rotate("+(6*i)+"deg)";
+            }
+        }
+        function ToTime(){
+            var oData=new Date();
+            var iSec=oData.getSeconds();
+            var iMin=oData.getMinutes()+iSec/60;
+            var iHours=oData.getHours()+iMin/60;
+            oSec.style.WebkitTransform="rotate("+(6*iSec)+"deg)";
+            oMin.style.WebkitTransform="rotate("+(6*iMin)+"deg)";
+            oHour.style.WebkitTransform="rotate("+(30*iHours)+"deg)";
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="ul">
+            <!--<li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li> -->
+        </ul>
+        <div id="hour">
+        </div>
+        <div id="min">
+        </div>
+        <div id="sec">
+        </div>
+        <div class="cir">
+        </div>
+    </div>
+</body>
+
+</html>

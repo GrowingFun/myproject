@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <template>
+        <span>{{ message }}</span>
+    </template>
+    <script>
+    export default {
+        data() {
+                return {
+                    message: 'hello!'
+                }
+            },
+            created() {
+                this.message = 'bye!'
+            }
+    }
+    </script>
+</body>
+
+</html>

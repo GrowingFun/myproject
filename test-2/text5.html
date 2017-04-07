@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+<title>Document</title>
+<style>
+
+</style>
+			
+</head>
+<body>
+	
+
+
+
+
+
+<script>
+
+$(".btn1").find('li').click(function() {
+	var licount=$(this).index();
+	$(this).attr("class","active").siblings('li').attr("class","")
+	$(".box_img").find('ul').animate({marginTop: -150*licount});
+	time=setInterval(function(){
+
+	},2000)
+});
+
+//弹出框居中显示
+/**var $div1=$(".div1").outerWidth();
+var $div2=$(".div1").outerHeight();
+var $win=$(window).width()
+var $win1=$(window).height()
+$("button").click(function() {
+
+	$(".div1").css('left', ($win-$div1)/2);
+	$(".div1").css('top', ($win1-$div2)/2);
+	$(".div1").show(500);
+
+});
+$(".close").click(function() {
+	$(".div1").css('display', 'none');
+});
+
+
+$(window).on("scroll resize",function(){
+
+	$(".div1").css('top',($win1-$div2)/2+$(window).scrollTop());//滚动滚动条时，对话框垂直居中
+
+
+})**/
+
+
+
+// 获取页面尺寸
+//console.log($(document).height())//页面高
+// console.log($(window).height())//可视区高
+//滚动距离scrollTop()
+//offset()获取元素距离文档边距，距离是相对于整个文档的，不是可视区的
+//position()
+//滚动到最底端的滚动距离是 $(document).scrollTop()==$(document).height()-$(window).height();
+//offsetParent();获取到祖先元素
+// $(document).click(function() {
+// 	console.log($(".div2").offsetParent());
+
+// });
+// $(window).scroll(changeto)
+// function changeto(){
+// 	$("img").each(function(index, el) {
+// 		if($(this).offset().top < $(window).height()+$(document).scrollTop()){
+// 			$(this).attr("src",$(this).attr("_src"))
+// 			};
+// 	});
+// }
+//ev.pageY pageX鼠标的坐标：相对于整个页面的
+
+//ev.clientY clientX鼠标的坐标：相对于可视区
+
+//alert(ev.which)//鼠标键盘键值
+
+//alert(ev.target)//事件作用的对象
+//return false--- 在循环中相当于break 阻止冒泡和默认事件
+//ev.stopPropagation()//阻止冒泡
+//	ev.preventDefault();阻止默认事件
+// $(".div1").click(function(ev) {    //清除父级事件
+// 	alert("fdfs")
+
+// 	$(".div2").off("click").click(function(ev) {
+// 	alert("222")
+//   });
+// });
+/**
+实现元素随鼠标移动
+var dixX=0;
+var dixY=0;
+
+$(".div1").on("mousemove",function(ev){
+	disX=ev.pageX-$(this).offset().left;
+	disY=ev.pageY-$(this).offset().top;
+$(document).on("mousemove",function(ev){
+
+$(".div1").stop().animate({
+	left: ev.pageX-disX,
+	top: ev.pageY-disY}
+	,1000);
+	})
+
+	$(document).on("mouseup",function(){
+		$(this).off();
+
+	})
+	return false
+})
+
+**/
+// $("ul").find('li').click(function(event) {
+// 	$(this).css('background-color', 'red');
+// });
+
+
+/**事件委托delegate
+$("ul").delegate('li', 'click', function(event) {
+	$(this).css('background-color', 'red');
+});
+**/
+//$(ev.delegateTarget)委托人，上例就是ul,好处就是事件也可以继承;
+//undelegate取消委托
+
+//ev.which==13判断回车键
+//$("button").trigger('click'); 主动触发事件;
+
+/**$("ul").delegate('li', 'click', function(ev) {
+	$(this).css('background-color', 'red');
+	$(ev.delegateTarget)
+});
+
+
+$("button").click(function(ev) {
+	var textcontent=$("input[type=text]").val();
+	console.log(textcontent)
+	var $li=$("<li>"+textcontent+"</li>");
+	$("ul").append($li);
+});
+
+
+$("input").keydown(function(ev){
+	if (ev.which==13) {
+		$("button").trigger('click');//相当于$("button").click();
+
+	} 
+})
+**/
+
+//事件命名空间
+// $("div").on("click.bcd",function(){
+// 	alert(1)
+// })
+// $("div").on("click.abc",function(){
+// 	alert(123)
+// })
+// $("div").trigger('click.abc')
+
+//工具方法
+
+//$().css();$().html().$().click()//都是针对JQ对象方法
+//$.xx(); $.yyy();  $.zzz();//工具方法，即可以给JQ对象用，也可以给原用JS用
+
+	//$.type()查看变量类型
+	 //var a="hello";
+	// alert($.type(a))
+	//$.isFunction(a)判断是不是函数
+	//$.isArray(a)判断是不是数组;;
+	//$.isWindow(a)判断是不是窗体;;
+	//$.isEmptyObject(a)判断是不是空对象;
+	//$.isPlainObject(a)判断是不是自变量;;
+	//$.extend(a,b)对象继承,对象a复制到b。默认是浅拷贝
+	//$.proxy()改this指向
+
+// $("button").click(function() {
+// 	$(".div1").animate(
+// 		{width:500},
+// 		{duration:1000,
+// 			easing:"linear",
+// 			complete:function(){
+// 				alert('fd')
+// 			},
+// 			step:function(a,b){
+// 				console.log(b.pos)//运动过程中的比例值（0-1）
+// 			}
+// 		})
+// });
+//delay(1000)当执行前面的动作之后隔1S钟再去执行别的
+//运动队列一个一个执行
+// stop()默认停止当前运动,清空队列行为
+//stop(true)停止所有运动
+//stop(true,true)可以停止到指定的目标点（当前的）
+//finish运动完成
+
+//mouseover,mouseout鼠标移入移出
+
+//$.parseJSON():把JSON类型的字符串，转换成真正的JSON数据
+// $(document).ready(function() {
+// 	var a='{"name":"hello","age":"20"}';
+// 	var json=$.parseJSON(a);
+// 	console.log(json);
+// 	console.log(json.name)
+// });
+//$.parseHTML():转化HTML的形式的字符串，转成DOM节点，放到一个数组中
+//$.parseXML()把XML形式的字符串，转成真正的XML节点
+
+
+</script>
+</body>
+</html>		

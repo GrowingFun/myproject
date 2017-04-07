@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <title>边框图片</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <label>
+        <input type="checkbox" onchange="xx(this)" name="" value="" on=0 placeholder="">
+    </label>
+    <label>
+        <input type="checkbox" onchange="xx(this)" name="" value="" on=0 placeholder="">
+    </label>
+    <label>
+        <input type="checkbox" onchange="xx(this)" name="" value="" on=0 placeholder="">
+    </label>
+    <script>
+    function xx(obj) {
+  	      clear(obj)
+            $(obj).prop("checked", true);
+             
+
+
+
+    }
+
+    function clear(obj) {
+        $("label").each(function(index, el) {
+            $(this).find('input').removeProp("checked");
+        });
+
+    }
+    </script>
+</body>
+
+</html>

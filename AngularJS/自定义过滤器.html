@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+	<title>Document</title>
+	<script>
+		var m1=angular.module("app",[]);
+		m1.filter('firstUpper',function(){
+			return function(str,num){
+				return str.charAt(0).toUpperCase()+str.charAt(num-1).toUpperCase()+str.substring(2);
+			}
+		})
+		m1.controller("Aaa",["$scope","$filter",function($scope,$filter){
+				$scope.name=$filter("currency")("5415616.32645465");
+		}])
+	</script>
+</head>
+<body>
+	<div ng-controller="Aaa">
+		<span>{{name}}</span>
+	</div>
+</body>
+</html>

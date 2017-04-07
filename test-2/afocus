@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css" media="screen">
+a:focus{
+	background-color: blue;
+}
+	
+</style>
+<body>
+	<a href="">dddd</a>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    li {
+        width: 100px;
+        height: 50px;
+        background-color: blue;
+        margin-bottom: 20px;
+        list-style-type: none;
+        display: block;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+    }
+    
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        left: 200px;
+        top: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="ul">
+        <li draggable="true">a</li>
+        <li draggable="true">b</li>
+        <li draggable="true">c</li>
+    </ul>
+    <div id="div1">
+    </div>
+    <img src="img/0.JPG" alt="" width='100' height='80' id="img" style="display: none;">
+    <!-- 	拖放事件：
+dragstart拖拽前触发 -->
+    <script>
+    window.onload = function() {
+        var oUl = document.getElementById("ul")
+        var aLi = document.getElementsByTagName("li");
+        var oDiv1 = document.getElementById("div1");
+        var oImg = document.getElementById("img");
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].index = i;
+            aLi[i].ondragstart = function(ev) { /*拖拽前*/
+                var ev = ev || window.event; /*兼容火狐*/
+                ev.dataTransfer.setData('name', this.index);
+                ev.dataTransfer.effectAllowed = 'copy'; /*拖到目标区域中的鼠标样式*/
+                ev.dataTransfer.setDragImage(oImg, 0, 0)
+                    // this.style.backgroundColor = "green";
+
+            }
+            aLi[i].ondrag = function() { /*拖拽中*/
+                //this.style.backgroundColor = "blue";
+            }
+            aLi[i].ondragend = function() { /*拖拽后*/
+                // this.style.backgroundColor = "red";
+            }
+        }
+        oDiv1.ondragenter = function() { /*目标移入*/
+            // this.style.background = 'blue';
+             this.innerHTML='可以释放了';
+        }
+        oDiv1.ondragover = function(ev) { /*目标和移入之间*/
+            /*  document.title = i++;*/
+            /* 要想触发drop事件，必有在dragover阴止默认事件*/
+            ev.preventDefault();
+             
+        }
+        oDiv1.ondragleave = function() { /*目标移出*/
+            //this.style.background = 'red';
+            this.innerHTML='将图片拖放到此处';
+        }
+        oDiv1.ondrop = function(ev) { /*目标移出*/
+            this.appendChild(aLi[ev.dataTransfer.getData('name')])
+            oUl.removeChild(aLi[ev.dataTransfer.getData('name')]);
+
+
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index = i;
+            }
+        }
+    }
+
+    /*解决火狐下不能拖拽*/
+    /*必有设置dataTransfer对象的setData方法才可以拖拽除图片外的其它标签*/
+    </script>
+</body>
+
+</html>

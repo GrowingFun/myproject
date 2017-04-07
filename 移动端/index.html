@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+    var w = window.screen.width;
+    var targetW = 768;
+    scale = w/targetW;
+    var meta = document.createElement("meta");
+    meta.name = "viewport";
+    meta.content = "width=device-width,user-scalable=no,initial-scale=" + scale + ",minimum-scale=" + scale + ",maximum-scale=" + scale + "";
+    document.head.appendChild(meta)
+
+    var html = document.documentElement;
+/*   var hWidth = html.getBoundingClientRect().width;*/
+    html.style.fontSize /*= hWidth / 10 + 'px';*/
+    </script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2>个人中心</h2>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="">链接1</a></li>
+            <li><a href="">链接2</a></li>
+            <li><a href="">链接3</a></li>
+            <li><a href="">链接4</a></li>
+            <li><a href="">链接5</a></li>
+            <li><a href="">链接6</a></li>
+        </ul>
+    </div>
+    <div class="list-wrap">
+    </div>
+</body>
+
+</html>

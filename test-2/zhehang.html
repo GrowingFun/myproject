@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .btn {
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        background-color: #fff;
+        border: 1px solid #eee;
+        text-align: center;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        border-radius: 4px;
+    }
+    
+    .btn:hover {
+        background-color: #999;
+        color: #fff;
+    }
+    
+    .btnBox {
+        width: 100%;
+    }
+    
+    .content {
+        width: 100%;
+        border: 1px solid #999;
+        height: 400px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="btnBox" id="btnBox">
+        <span class="btn">选项1</span>
+        <span class="btn">选项1</span>
+        <span class="btn">选项1</span>
+    </div>
+    <div class="content" id="content">
+    </div>
+    <script>
+    var btnBox = null;
+    var oBtn = null;
+    var content = null;
+    
+    window.onload = function() {
+
+        btnBox = document.getElementById("btnBox");
+        oBtn = btnBox.getElementsByTagName("span");
+        content = document.getElementById("content");
+        Work();
+
+        function Work() {
+             var url = 'a1.json';
+            for (var i = 0; i < oBtn.length; i++) {
+                oBtn[i].index = i;
+                oBtn[i].onclick = function() {
+                    clearS();
+                    this.style.backgroundColor = "#999";
+                    this.style.color = "#fff";
+                    switch (this.index) {
+                        case 0:
+                            url = 'a1.json';
+                            ajaxR(url);
+                            break;
+                        case 1:
+                            url = 'a2.json';
+                            ajaxR(url);
+                            break;
+                        case 2:
+                            url = 'a3.json';
+                            ajaxR(url);
+                            break;
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    function clearS() {
+        for (var i = 0; i < oBtn.length; i++) {
+            oBtn[i].style.backgroundColor = "";
+            oBtn[i].style.color = "";
+        }
+    }
+
+
+    function ajaxR(url) {
+        $.ajax({
+            url: url,
+            success: function(data) {
+                content.innerHTML = data.value;
+            }
+        })
+    }
+    </script>
+</body>
+
+</html>

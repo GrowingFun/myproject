@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <title>Document</title>
+    <script>
+    /*angular动态初始化angular.bootstrap(document,["myApp"])*/
+    var m1 = angular.module("myApp",[]);
+    m1.controller("Aaa", ["$scope", function($scope) {
+    		$scope.name="hi";
+    }])
+    m1.controller("Bbb", ["$scope", function($scope) {
+    	$scope.name="你好";
+    	$scope.age="30";
+
+    }])
+
+    document.onclick=function(){
+    	angular.bootstrap(document,["myApp"])
+    }
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <span>{{name}}</span>
+    </div>
+    <div ng-controller="Bbb">
+        <span>{{name}}</span>
+        <span>{{age}}</span>
+    </div>
+</body>
+</html>

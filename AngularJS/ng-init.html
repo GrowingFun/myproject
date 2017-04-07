@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+
+    </style>
+    <script>
+    var m1 = angular.module("app", [])
+    m1.controller("Aaa", ["$scope", function($scope) {
+        $scope.name = "aaa"
+        $scope.shz = true;
+
+        $scope.values = [
+            "aaaaa",
+            "bbbbb",
+            "dddddd",
+            "fdsafds"
+        ]
+        $scope.arr=[['a','b'],['c','d']]
+        $scope.sH = function() {
+            $scope.shz = !$scope.shz;
+
+        }
+    }])
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa" ng-init="text='hello'"><!-- 初始化值 -->
+        <p ng-click="sH()">点击</p>
+        <span ng-show={{ "shz"}}>{{name}}</span>
+        <ul ng-repeat="data in values">
+            <li>{{data}}</li>
+        </ul>
+        <p>{{text}}</p>
+        <div ng-repeat="out in arr">
+        	<p ng-repeat="inn in out">{{inn}}</p>
+        </div>
+    </div>
+</body>
+
+</html>

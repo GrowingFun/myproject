@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <script>
+/*    var meta = document.createElement("meta");
+    var w = window.screen.width;
+    var targetW = 320;
+    var scale = w / targetW;
+    meta.name = "viewport";
+    meta.content = "width=device-width,user-scalable=no,initial-scale=" + scale + ",minimum-scale=" + scale + ",maximum-scale=" + scale + "";
+    document.head.appendChild(meta);*/
+    var html = document.documentElement;
+    var view = html.getBoundingClientRect().width;
+    html.style.fontSize = view / 10 + "px";
+    </script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+    }
+    
+    html {
+
+        height: 100%;
+        overflow: hidden;
+    }
+	.wrap{
+		height: 100%;
+		overflow: auto;
+		padding-top:2rem;
+	}
+    .header {
+    	display: block;
+        height: 1.375rem;
+        width: 100%;
+        background: red;
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 0.526rem;
+        text-align: center;
+
+    }
+    .header p{
+    	text-align: center;
+    	margin: 0;
+    	line-height: 1.375rem;
+    }
+    input{
+    	display: block;
+    	width: 100%;
+    	border: 1px solid red;
+    	height:0.625rem;
+    	box-sizing:border-box;
+
+    }
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+	
+    <div class="header" id="div">
+        <p>个人中心</p>
+    </div>
+
+
+<input id="input" type="text" name="" value="" placeholder="请输入内容">
+
+
+</div>
+
+    <script>
+    var oDiv=document.getElementById("div");
+
+   oDiv.addEventListener("touchstart",ev)
+
+   function ev(ev){
+   	this.innerHTML=ev.touches.length;
+   	console.table(ev.changedTouches)
+   }
+  /* 
+    document.addEventListener("touchstart",function(ev){
+    	ev.preventDefault();
+    })
+    var oInput=document.getElementById("input");*/
+/*    oInput.addEventListener("touchstart",function(ev){
+
+    })*/
+    </script>
+</body>
+
+</html>

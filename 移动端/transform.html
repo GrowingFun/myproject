@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scaleable=no">
+    <script>
+    var html = document.documentElement;
+    var rem = html.getBoundingClientRect().width;
+    html.style.fontSize = rem / 10 + 'px';
+    </script>
+    <script>
+    window.onload = function() {
+        var oBox = document.getElementById("box")
+        var oDiv = document.getElementById("div")
+        oDiv.addEventListener("touchend",function(){
+        	oDiv.style.WebkitTransform="rotate(90deg)";
+        })
+    }
+    </script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+    }
+    
+    #box {
+        width: 2.0rem;
+        height: 2.666667rem;
+        border: 1px solid #000;
+        padding: 1.333333rem;
+    }
+    
+    #div {
+        width: 2.0rem;
+        height: 2.666667rem;
+        background: blue;
+        transition: .8s;
+        transform-origin: left center;
+    }
+       #box:hover #div{
+		-webkit-transform:rotate(90deg);
+		transform:rotate(90deg); 
+} 
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="div"></div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+defer延迟加载，window.onload之后加载
+async=true异步加载
+asnyc=false同步

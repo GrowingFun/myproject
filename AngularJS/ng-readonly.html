@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+	<title>Document</title>
+	<script>
+		var m1=angular.module("app",[])
+		m1.controller("Aaa",["$scope",function($scope){
+			$scope.isonly=true;
+		}])
+	</script>
+</head>
+<body>
+<div ng-controller="Aaa">
+		<input type="text" ng-readonly="isonly">
+</div>
+
+</body>
+</html>

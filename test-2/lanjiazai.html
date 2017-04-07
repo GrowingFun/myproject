@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	div{
+		width: 500px;
+		height: 200px;
+		border: 1px solid #999;
+		margin-bottom: 400px;
+	}
+		
+	</style>
+	
+</head>
+<body>
+	<div>
+		<img _src="images/2.png" alt="">
+	</div>
+	<div>
+		<img _src="images/3.png" alt="">
+	</div>
+	<div>
+		<img _src="images/4.png" alt="">
+	</div>
+	<div>
+		<img _src="images/plane_ico.png" alt="">
+	</div>
+	<div>
+		<img _src="images/4.png" alt="">
+	</div>
+	<script>
+
+	$("div").each(function(){
+		if($(this).offset().top<$(window).scrollTop()+$(window).height()){
+			$(this).find('img').attr("src",$(this).find("img").attr("_src"));
+
+		};
+
+	})
+
+$(window).scroll(function(){
+
+	$("div").each(function(){
+		if($(this).offset().top<$(window).scrollTop()+$(window).height()){
+			$(this).find('img').attr("src",$(this).find("img").attr("_src"));
+
+		};
+
+	})
+
+
+})
+
+
+
+	</script>
+</body>
+</html>

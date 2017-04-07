@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="text" name="username" value="" placeholder="">
+<input type="text" name="age" value="" placeholder="">
+<input type="button" name="" id="btn" value="提交" placeholder="">
+<script>
+	var oBtn=document.getElementById("btn");
+	oBtn.onclick=function(){
+
+		var xhr=null;
+		try{
+			xhr = new XMLHttpRequest();
+		}catch(e){
+			xhr = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+
+		xhr.open('get','1.php',true);
+		xhr.send();
+		xhr.onreadystatechange=function(){
+			if (xhr.readyState==4) {
+				if (status==200) {
+					var data=xhr.responseText;
+
+				}else{
+					alert(xhr.status)
+				}
+			}
+		}
+	}
+</script>
+	
+</body>
+</html>

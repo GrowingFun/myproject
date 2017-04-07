@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>
+    </title>
+</head>
+
+<body>
+    <div value="2"></div>
+    <div value="2"></div>
+    <div value="1"></div>
+    <div value="04"></div>
+    <div class="dd" value="2222">dfsd</div>
+    <h2 class="h2-box">ddd</h2>
+    <div id="toggle">
+    	收起
+    </div>
+    <div id="content">
+    	fsdfsdfsdf
+    </div>
+    <script>
+    /*	console.log($("[value$='4']").length)*/
+    var json = {
+        "22": "ss",
+        "tt": 33,
+        "uu": 55
+    };
+    /*		for(var key in json){
+    			console.log(key)
+    		}*/
+    /*		$.each(json,function(name,value){
+    			console.log(name)
+    		})*/
+    console.log($(".h2-box").prevAll("div"))
+
+
+    </script>
+</body>
+
+</html>

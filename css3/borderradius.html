@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style type="text/css" media="screen">
+    body {
+       padding: 0;
+       margin: 0;
+    }
+/*     .wrap{
+    	position: relative;
+    	width: 200px;
+    	height: 200px;
+    } */
+    .box {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        background: green;
+        border-radius: 100px 100px 0px 100px;
+        background: -webkit-linear-gradient(left, green 0, yellow 100%);
+/*         -webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, 0) 100%); */
+        transition:5s;
+        transform-origin: 0 200px;
+
+          /* animation: scale 2s infinite;  */ 
+        position: absolute;
+        left: 0;
+        box-shadow: 10px 10px 80px #69c569,10px 10px 30px yellow;
+    }
+
+
+    @keyframes scale {
+        0% {
+        	transform: translateY(-400px);
+            opacity: 0;
+
+        }
+        100% {
+         
+            opacity: 1;
+            transform: translateY(800px);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+        </div>
+         <div class="box2">
+        </div>
+    </div>
+</body>
+
+</html>

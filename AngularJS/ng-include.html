@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>Document</title>
+    <script>
+    var m1 = angular.module("app", [])
+    m1.controller("Aaa", ["$scope", function($scope) {
+        $scope.value = [{
+            "name": "dd",
+            "age": 30
+        }, {
+            "name": "cc",
+            "age": 37
+        }, {
+            "name": "ee",
+            "age": 78
+        }, {
+            "name": "ff",
+            "age": 49
+        }]
+    }])
+    </script>
+</head>
+
+<body>
+<div  ng-controller="Aaa" ng-include="'temp.html'"><!-- 把别的文件加载进来-->
+	
+</div>
+</body>
+
+</html>

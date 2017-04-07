@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<title>Document</title>
+	<script>
+		var m1=angular.module("app",[])
+		m1.controller("sn",["$scope",fnx])
+		function fnx($scope){
+
+		}
+		fnx.prototype.name="hello";
+		fnx.prototype.value=function(){
+			return 30;
+		}
+	</script>
+</head>
+<body>
+	<div ng-controller="sn as ww" >
+		<span>{{ww.name}}:{{ww.value()}}</span>
+	</div>
+</body>
+</html>

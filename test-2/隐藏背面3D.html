@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+   /*  反面（背面）：和父级角度相背的 */
+    #box {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        left: 500px;
+        top: 100px;
+    }
+    
+    #div {
+        width: 200px;
+        height: 200px;
+        transition: 5s;
+        transform-style: preserve-3d;
+    }
+    
+    #div span:nth-of-type(1) {
+        background: red;
+        line-height: 50px;
+        transform:rotateY(0deg);
+    }
+    
+    #div span:nth-of-type(2) {
+    	line-height: 100px;
+        background: yellow;
+        transform:rotateY(180deg);
+     
+    }
+    span {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+		left: 0;
+		top: 0;
+		transform-style: preserve-3d;
+        display: block;
+        font-size: 30px;
+        backface-visibility: hidden;/* 隐藏背面 */
+
+    }
+    em{
+    	display: block;
+    	font-style: normal;
+    	transform: translateZ(10px);
+    	text-align: center;
+    	line-height: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="div">
+            <span><em>正<em></span>
+            <span><em>反</em></span>
+        </div>
+    </div>
+    <script>
+    var div = document.querySelectorAll("div");
+    setInterval(function() {
+        div[1].style.transform = "rotateY(180deg)"
+    }, 1000);
+    </script>
+</body>
+</html>;

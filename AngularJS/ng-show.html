@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>Document</title>
+    <script>
+    var m1 = angular.module("app", [])
+    m1.controller("Aaa", ["$scope", function($scope) {
+        $scope.set = true;
+        $scope.bBtn=true;
+        $scope.cLI = function() {
+            $scope.set = !$scope.set;
+        }
+
+    }])
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+    <input type="checkbox" ng-model="bBtn">
+    	<span ng-click="cLI()">点击</span>
+        <span ng-show={{"set"}}>你好</span>
+        <span ng-if="bBtn">磊</span><!-- 为false删除节点为true不删除 -->
+        <div ng-switch on="bBtn">
+        	
+        	<span ng-switch-when="false">显示1</span>
+        	<span ng-switch-when="true">显示3</span>
+        	<span ng-switch-default>显示</span>
+        </div>
+        <span ng-open=""></span><!-- 针对的是detail标签 -->
+        
+    </div>
+</body>
+
+</html>
+

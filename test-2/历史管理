@@ -1,0 +1,6 @@
+历史管理
+html5中的历史管理
+onhashchange手机端不支持
+ onhashchang,是一个事件，当hash值有变化的时候会触发这个事件
+ window.location.hash=number;
+ 

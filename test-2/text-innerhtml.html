@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input id="text" type="text" name="" value="" placeholder="">	
+<input id="btn" type="button" name="" value="提交" placeholder="">
+<p id="p">我是可以改变的。。。</p>
+<script>
+	window.onload=function(){
+		var oText=document.getElementById("text");
+		var oBtn=document.getElementById("btn");
+		var oP=document.getElementById("p");
+		oBtn.onclick=function(){
+			oP.innerHTML=oText.value;
+		
+		}
+
+	}
+</script>
+</body>
+</html>

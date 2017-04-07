@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <link rel="stylesheet" type="text/css" href="style/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="style/css/style.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="script/flexible.js" type="text/javascript"></script>
+    <title>打卡列表</title>
+</head>
+
+<body class="b-list">
+    <div class="img-box" id="app">
+        <div class="img-wrap" v-for="item in list">
+            <img v-bind:src="item.url" alt="">
+        </div>
+    </div>
+    <script>
+    var vm =new Vue({
+        el: "#app",
+        data: {
+            list: [{
+                "url": "style/images/2.png"
+            }, {
+                "url": "style/images/3.png"
+            }, {
+                "url": "style/images/4.png"
+            }]
+        }
+    })
+    </script>
+</body>
+
+</html>

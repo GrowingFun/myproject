@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>Document</title>
+    <script>
+    var m1 = angular.module("app", [])
+    m1.controller("Aaa", ["$scope", function($scope) {
+        $scope.name = "点击前";
+        $scope.spanClick = function() {
+            $scope.name = "点击后";
+        }
+    }])
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <span ng-click="spanClick()">{{name}}</span>
+        <!-- 		<input type="checkbox" ng-model="aaa">
+<select name="" >
+	<option value="">1</option>
+	<option value="" >2</option>
+	<option value="" ng-selected="aaa">3</option>
+</select> -->
+        <input type="text" ng-change="bbb='hello'" ng-model="bbb">{{bbb}}
+        <input type="text" value="aaaaasss" ng-paste="ccc=true">{{ccc}}
+    </div>
+    <!-- 指令支持表达式 -->
+    <!-- ng-selected下拉菜单选中 -->
+    <!-- ng-change下拉菜单选中 -->
+      <!-- ng-copy进行拷贝的时候触发 -->
+      <!-- ng-cut进行剪切的时候触发 -->
+      <!-- ng-paste进行粘贴的时候触发 -->
+</body>
+
+</html>

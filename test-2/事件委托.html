@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" name="" value="添加" placeholder="">
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+        <li>55</li>
+    </ul>
+    <script>
+    $("ul").delegate('li','click',function(ev) {
+
+        $(this).css('background', 'red');
+        console.log(ev.delegateTarget)//委托源
+        $(ev.delegateTarget).undelegate();
+
+
+    })
+
+    $("input").click(function() {
+        var $li = $('<li>555</li>');
+        $("ul").append($li);
+    })
+    </script>
+</body>
+
+</html>

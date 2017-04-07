@@ -1,0 +1,43 @@
+<div class="app-container with-navbar" ng-controller="SignupController">
+
+    <div class="navbar fixed-top">
+        <div class="navbar-left hide-weixin" ng-click="goBack()">
+            <img class="button-icon" src="image/nav-left.png"/>
+            <div class="button-text">返回</div>
+        </div>
+        <div class="navbar-title">
+        	用户注册
+        </div>
+        <div class="navbar-right">
+        </div>
+    </div>
+
+    <div class="app-content">
+    	<div class="signup-form">
+    		<div class="signup-field">
+    			<input class="field-input" placeholder="用户名" ng-model="username"/>
+    		</div>
+    	</div>
+    	<div class="signup-tips">3-25位英文与数字</div>
+    	<div class="signup-form">
+    		<div class="signup-field">
+    			<input type="password" class="field-input" placeholder="设置密码" ng-model="password"/>
+    		</div>
+    		<div class="signup-hline"></div>
+    		<div class="signup-field">
+    			<input type="password" class="field-input" placeholder="确认密码" ng-model="password2"/>
+    		</div>
+    	</div>
+    	<div class="signup-tips">6-20位数字/字母/符号</div>
+    	<div class="signup-form">
+    		<div class="signup-field">
+    			<input class="field-input" placeholder="邮箱地址" ng-model="email"/>
+    		</div>
+    	</div>
+    	<div class="signup-tips">如：username@company.com</div>
+
+    	<div class="signup-submit" ng-click="touchSignup()">注册</div>
+    	<div class="signup-license" ng-click="touchLicense()">点击注册表示同意<span class="license">《用户协议》</span></div>
+    </div>
+
+</div>

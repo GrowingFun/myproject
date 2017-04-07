@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .active {
+        background: red;
+    }
+    
+    .noactive {
+        background: blue;
+    }
+    </style>
+    <script>
+    var m1 = angular.module("app", [])
+    m1.controller("Aaa", ["$scope", function($scope) {
+        $scope.value = [{
+            name: "dd1",
+            age: 20
+        }, {
+            name: "dd3",
+            age: 30
+        }, {
+            name: "dd15",
+            age: 50
+        }, {
+            name: "ee",
+            age: 50
+        }, {
+            name: "dd7",
+            age: 44
+        }, {
+            name: "uu",
+            age: 67
+        }]
+    }])
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <ul>
+            <li class="{{$even ? 'active':'noactive'}}" ng-repeat="data in value">{{data.name}}</li>
+        </ul>
+        <div ng-repeat-start="data in value">{{data.age}}</div>
+        <p>{{data.age}}</p>
+        <p ng-repeat-end="data in value">{{data.name}}</p>
+    </div>
+    <!-- ng-repeat 中的$index 遍历索引 -->
+    <!-- ng-repeat 中的$first 遍历 判断第一项 第一项为true，其它false-->
+    <!-- ng-repeat 中的$middle 遍历 判断是否是中间项，中间项为true 首尾为false-->
+    <!-- ng-repeat 中的$even 遍历 判断是否是基数行，基数行为true，偶数行为false-->
+    <!-- ng-repeat 中的$odd 遍历 判断是否是中间项，偶数行为true 基数行为false-->
+    <!-- ng-repeat-start 实现兄弟之间的数据循环 -->
+    <!-- ng-repeat-end 实现兄弟之间的数据循环 -->
+</body>
+
+</html>

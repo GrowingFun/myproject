@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .box {
+        width: 400px;
+        height: 400px;
+        clear: both;
+          transition: 2s;
+    }
+    
+    .box div {
+        width: 190px;
+        height: 190px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490589556364&di=a7e220fb4c1dd02b1e6836d428d04669&imgtype=0&src=http%3A%2F%2Ffile01.16sucai.com%2Fd%2Ffile%2F2014-01-25%2F13906615646096.jpg')no-repeat center center;
+        background-size: cover;
+        float: left;
+        box-sizing: border-box;
+        border: 1px solid #333;
+     
+
+    }
+    .box:hover{
+    	transform: rotate(720deg);
+    }
+    
+    .box div:nth-of-type(2n) {
+        margin-right: 0;
+    }
+    
+    .box div:nth-of-type(1) {
+        border-radius: 0px 150px 0px 150px;
+    }
+    
+    .box div:nth-of-type(2) {
+        border-radius: 150px 0px 150px 0px;
+    }
+    
+    .box div:nth-of-type(3) {
+        border-radius: 150px 0px 150px 0px;
+    }
+    
+    .box div:nth-of-type(4) {
+        border-radius: 0px 150px 0px 150px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+
+    </style>
+    <script>
+    /*    var m1 = angular.module("app", [])
+
+                m1.controller("Aaa", ["$scope", function($scope) {
+                            $scope.validValue="不能为空"
+
+                }])*/
+
+    /*    var m1 = angular.module("app", [])
+        m1.controller("Fn", ["$scope", Fn])
+
+        function Fn($scope) {
+        }
+        Fn.prototype.num = '123';
+        Fn.prototype.value = function() {
+            return 'aaa'
+        }
+        Fn.prototype.color=["red","yellow","blue"]*/
+    var m1 = angular.module("app", [])
+    m1.controller("Aaa", ["$scope", function($scope) {
+        $scope.name = "aaa"
+        $scope.color = ["aa","bb","cc"]
+    }])
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <span>{{name}}</span>
+        <select ng-options="data for data in color" ng-model="seColor">
+        </select>
+        <p>{{seColor}}</p>
+        <ul ng-repeat="data in color">
+            <li>{{data}}</li>
+        </ul>
+    </div>
+    <!--  a标签，select标签已被angular重构 -->
+</body>
+
+</html>
+<!-- ng-controller -->
+<!-- 控制器 -->

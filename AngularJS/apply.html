@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <title>Document</title>
+    <script>
+     /*$scope.$apply刷新视图*/
+    var m1 = angular.module("myapp", []);
+    m1.controller("Aaa", function($scope, $timeout) {
+        $scope.name = "aaa";
+        /*			$timeout(function(){
+        				$scope.name="111";
+        			},1000)*/
+        setTimeout(function() {
+            $scope.$apply(function() {
+                $scope.name = "111";
+            })
+        },1000)
+    })
+    
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <span>{{name}}</span>
+        </d </body>
+
+</html>

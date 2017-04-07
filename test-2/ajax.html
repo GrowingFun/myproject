@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<title>Document</title>
+</head>
+<body>
+<div>
+	
+</div>
+	<script>
+
+	// var json={"name":"yangfeng","sex":"女","age":30};
+	var json1="json1.json";
+	// for(var attr in json1){
+	// 	console.log(json1[attr]);
+	// }
+
+	init(json1)
+	
+		function init(url){
+			$.ajax({
+				url:url,
+				cache:false,
+				dataType:'json',
+				success:function(data){
+					console.log(data.length)
+					console.log(data[1].data.length);
+					console.log(data[1].data[0].name);
+					for (var i = 0; i < data.length; i++) {
+						for (var j = 0; i < data[i].data.length; j++) {
+
+							$("div").append("<p>"+data[i].data[j].name+data[i].data[j].value+"</p>");
+						}
+					
+					}
+				},
+				error:function(err){
+					console.log(err);
+				}
+			})
+		}
+
+	</script>
+</body>
+</html>

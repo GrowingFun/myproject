@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <title>Document</title>
+    <script>
+    /*		function show(n1,n2){
+    			alert(n2)
+    			alert(n1)
+    			alert(this)
+    		}*/
+    /*angular.bind(document,show,4,3)();*/
+    /*改this指向和传参*/
+    /*angular.copy()*/
+    /*拷贝对象*/
+    var a = {
+        name: 'hello'
+    }
+    var b = {
+            age: 20
+        }
+        /*		var c=angular.copy(a,b);
+        		console.log(c);
+        		console.log(a)
+        		console.log(b)*/
+    var c = angular.extend(a, b); /*对象继承*/
+    console.log(c)
+    console.log(b)
+    console.log(a)
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <!-- angular.bind()改this指向 -->
+</body>
+
+</html>

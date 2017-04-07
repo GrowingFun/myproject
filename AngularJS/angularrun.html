@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="node_modules/angular/angular.js" type="text/javascript"></script>
+    <title>Document</title>
+    <script>
+    var m1 = angular.module("app", []);
+    m1.controller("Aaa", ["$scope", function($scope) {
+        $scope.sum = {
+            name: "11",
+            age: "20"
+        }
+        $scope.$watch("sum.name", function(newValue, oldValue) {
+            $scope.sum.name == "11" ? $scope.sum.age = 50 : $scope.sum.age = 30;
+        })
+    }])
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <input type="text" ng-model="sum.name">
+        <span>{{sum.age}}</span>
+    </div>
+</body>
+
+</html>

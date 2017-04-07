@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+	<title>	</title>
+</head>
+<body>
+	<ul	>
+		<li data='["src":"videos/text1.mp4","name":"宣传片2","time":"2016-10-26"]'></li>
+	</ul>
+	<script>
+		var data=$("li").attr("data");
+		var data2=$.parseJSON(data)
+		console.log(data2.src)
+
+	</script>
+</body>
+</html>

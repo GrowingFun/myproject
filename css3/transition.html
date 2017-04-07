@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	.box{
+		width: 200px;
+		height: 200px;
+		background: red;
+		transition:  1s width cubic-bezier(0.000, 1.650, 0.000, 1.650),2s 1s/* (延迟时间) */ height cubic-bezier(0.000, 1.650, 0.000, 1.650),3s background; 
+		opacity: 1;
+	}
+	.box:hover{
+		width: 800px;
+		height: 800px;
+		background: green;
+/* transform: skew(20deg, 90deg) */
+	}
+	/* ease逐渐变慢，默认值 */
+	/* linear匀速 */
+	/*ease-in加速 */
+	/*ease-out减速*/
+	/*ease-in-out先加速后减速*/
+	/* cubic-bezier 贝塞尔曲线*/
+	/* 贝塞尔 */
+	</style>
+	
+</head>
+<body>
+	<div class="box">
+
+		
+	</div>
+</body>
+</html>

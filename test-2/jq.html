@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+	<title>Document</title>
+</head>
+<body>
+<div class="box">
+	<div class="box1">
+		我是第一个
+	</div>
+
+	<span>fff</span>
+</div>
+<script>
+var $ul=$('<ul class="wrap"><li>1111122</li></ul>');
+
+// $(".box").after($ul);
+
+var oBox=$(".box1").clone(true);
+$(oBox).insertBefore($(".box"));
+
+</script>
+</body>
+</html>

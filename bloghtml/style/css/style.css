@@ -1,0 +1,275 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body {
+    line-height: 1.6;
+    font-family: "PingFang SC", Helvetica, Arial, "微软雅黑", "黑体"!important;
+    height: 100%;
+}
+body,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+li,
+th,
+td,
+p,
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+b,
+em,
+i,
+strong,
+th {
+    font-style: normal;
+    font-weight: 400
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%
+}
+
+input {
+    background-color: #fff
+}
+
+img {
+    border: 0
+}
+
+ul {
+    list-style: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+th {
+    text-align: left
+}
+
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+:focus {
+    outline: 0
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.header {
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1)
+
+}
+
+.header .header-box {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.header .header-box li {
+    float: left;
+    list-style: none;
+    padding: 20px 20px;
+}
+
+.header .header-box li.active a {
+    color: #fd13d4;
+}
+
+.header .header-box li.active {
+    border-bottom: 1px solid #fd13d4;
+}
+
+.header .header-box a {
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.section{
+    background:#fff;
+    margin:20px 0;
+    width:690px;
+    padding:10px 20px;
+   box-shadow: 0 4px 14px rgba(0,0,0,0.1)
+
+}
+.main{
+    width:1000px;
+    margin:0 auto;
+}
+.section.intro .i-title h2{
+    font-size: 20px;
+    color:#000;
+    text-align: center;
+    line-height: 40px;
+} 
+.section.intro .auth-inf p{
+    color:#333;
+    font-size: 14px;
+    text-align: center;
+    padding:5px;
+}
+.section.intro .auth-inf p span{
+    color:blue;
+    font-size: 12px;
+}
+
+.section.intro .intro-content p{
+    color:#000;
+    font-size: 14px;
+    text-align: left;
+    line-height: 20px;
+}
+.section.page a{
+    font-size: 14px;
+    color:#000;
+    text-decoration: none;
+
+}
+.section.comment .c-top{
+    font-size: 14px;
+    color:#000;
+}
+.section.comment .c-bottom span{
+    font-size: 12px;
+}
+.section.comment  .look-more-btn{
+    width:100%;
+    margin:10px 0;
+    cursor:pointer;
+}
+.section.comment  .look-more-btn span{
+    width:100%;
+    background:orange;
+    text-align: center;
+    color:#fff;
+    font-size: 14px;
+    line-height: 30px;
+    display:block;
+    border-radius:4px;
+}
+.right .item{
+    margin:20px 0;
+       box-shadow: 0 4px 14px rgba(0,0,0,0.1)
+}
+.right .item{
+    background:#fff;
+    padding:20px;
+}
+.right .item .a-title{
+    border-bottom: 1px solid #eee;
+    width:100%;
+    margin-bottom: 20px;
+}
+.right .item .a-title h2{
+    border-bottom: 1px solid red;
+    display:inline-block;
+}
+.right .item .control-input{
+    margin-bottom: 5px;
+}
+.right .item .control-input input[type=text]{
+    border:1px solid #eee;
+    width:100px;
+    line-height: 24px;
+    font-size:12px;
+}
+.right label{
+    display:inline-block;
+    width:100px;
+    text-align: right;
+    font-size: 14px;
+}
+.right .item  .submit-btn {
+    margin-top:10px;
+    cursor:pointer;
+}
+.right .item  .submit-btn #submit{
+    width:100px;
+    line-height: 30px;
+    background:orange;
+    color:#fff;
+    text-align:center;
+    border-radius: 4px;
+    display:block;
+}
+.togg-btn {
+    margin-top:10px;
+}
+.togg-btn p{
+    font-size: 12px;
+
+}
+.togg-btn a{
+    text-decoration: none;
+    font-size: 12px;
+}
+.right .item .list-wrap .list-box .list{
+    list-style-type: none;
+}
+.right .item .list-wrap .list-box .list a{
+    color:orange;
+    font-size:12px;
+}

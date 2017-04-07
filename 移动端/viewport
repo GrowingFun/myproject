@@ -1,0 +1,60 @@
+viewport：可视区窗口，设置可视区大小。
+默认：不设置viewport，一般可视区宽度在移动端是980;
+width:可视区宽度。（number||divice-width）;
+
+device如果设置成固定值的话，有设备会出问题
+user-scalable=no不允许用户缩放，yes,no,
+initial-scale页面的初始比例，一定要和最小缩放比例保持一致，
+最大缩放比例，maximum-scale=1.0;minimum-scale=1;用户缩放比例
+(screen.width)屏幕宽度
+
+像素比：window.devicePixelRatio,只读属性。获取当前设备的像素比。把一个像素放大至N个像素去显示，每款手机都会有像素比，
+截图的时候至少750以下的设计图去取图。
+
+QQ只能竖屏显示	<meta name="x5-orientation" content="portrait">
+
+uc强制竖屏
+<meta name="screen-orientation" content="portrait">
+
+UC全屏显示
+<meta name="full-screen" content="yes">
+禁止识别电话号码和邮箱号
+<meta name="format detection" content="telephone=no,email=no">
+
+移动端的一些问题：
+1、点击的高亮颜色
+a,input,button{
+	-webkit-tap-hightlight-color:rgba(0,0,0,.2)
+}
+2、ios上的按钮会变成圆角，清除圆角
+input,button{
+	-webkit-appearance:none;
+	border-radius:none;
+}
+3、移动端字体：
+所有设置都会有一种英文字体font-family:helvetica;
+4、最小字体12
+body *{
+	-webkit-text-size-adjust:100%;禁止用户修改字大小
+}
+
+5、去掉移动端选中状态（长按）兼容性不好
+
+body *{
+	-webkit-user-select:none;
+}
+6、Font Boosting,在一段文字我们没有给他设置高度的时候，在WEBKIT内核下文字的大小被浏览器放大了
+解决办法：1、设置高度。2、设置一个最大高度max-height;
+7、fixed固定定位
+
+
+
+用户百分比适合，高度不好算。
+
+
+
+rem和em很像，r:root根结点
+rem根本根结点字体大小去设置大小的。
+
+
+

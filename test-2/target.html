@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+
+    span{
+    	display:inline-block;
+    	width:50px;
+    	height:50px;
+    	border:1px solid red;
+    	position: absolute;
+    	left:0;
+
+    }
+    input[type=checkbox]{
+    	opacity: 0;
+    }
+    label{
+    	position: relative;
+    	overflow: hidden;
+    }
+    input:checked~span{
+		background-color:red;
+    }
+    p:first-line{
+    	color:red;
+    }
+    p:first-letter{font-size: 40px;}
+    p::selection{
+    	background-color:blue;
+    }
+    p:before{
+    	content:"aaa";
+    }
+h1{
+	font-size: 100px;
+	text-align:center;
+	font-weight: normal;
+	color:#fff;
+	text-shadow: 0 0 10px blue;
+	width:200px;
+	height:200px;
+	background-color:black;
+	box-shadow: 0 0 50px red,5px 5px 10px blue,-5px -5px 10px yellow;
+	margin:0 auto;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="" value="" placeholder="">
+            <span></span>
+        </label>
+    </div>
+    <p>注释:如果没有规定 !DOCTYPE,则 border-collapse 可能产生意想不到的结果。定义和用法 border-collapse 属性设置表格的边框是否被合并为一个单一的边框,还是象在标...</p>
+    <h1>注释</h1>
+</body>
+
+</html>

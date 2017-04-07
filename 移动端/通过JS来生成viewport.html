@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<!--     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale-1.0"> -->
+    <title>Document</title>
+    <script>
+        var w= window.screen.width;/*获取屏幕尺寸*/
+        var targetW=320;
+        var scale=w/targetW;/*缩放比是当前尺寸比目标尺寸*/
+        var meta=document.createElement("meta");
+        meta.name="viewport";
+        meta.content="width=device-width,user-scalable=no,initial-scale="+scale+",minimum-scale="+scale+",maximum-scale="+scale+"";
+        document.head.appendChild(meta)
+
+    </script>
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+    }
+    div {
+        width: 80px;
+        height: 100px;
+        background: red;
+        float: left;
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+    </div>
+    <div class="box1">
+    </div>
+    <div class="box1">
+    </div>
+    <div class="box1">
+    </div>
+
+</body>
+
+</html>

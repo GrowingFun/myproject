@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+
+	<title>Document</title>
+	<script>
+		var m1=angular.module("myapp",[])
+		m1.run(['$rootScope',function($rootScope){
+			$rootScope.name="hello";
+		}]);/*全局*/
+	</script>
+</head>
+<body>
+	<div>
+		<span>{{name}}</span>
+	</div>
+</body>
+</html>

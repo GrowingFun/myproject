@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="demo2">
+		你好
+	</div>
+	<input type="button" name="" value="改变" placeholder="" id="change">
+	<iframe src="iframe1.html" id="iframe1"></iframe>		<script>
+			var oIframe=document.getElementById("iframe1");
+			var oChange=document.getElementById("change")
+			oChange.onclick=function(){
+				oIframe.contentWindow.document.getElementById("box").style.color="red";
+				//oIframe.contentDocument.getElementById("box").style.color="red";//ie67不兼容
+
+			}
+
+		</script>
+</body>;
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="pr">
+    </div>
+    <script>
+    var oP = document.getElementById("pr");
+    var para = document.createElement('img');
+    var oI="http://img2.imgtn.bdimg.com/it/u=2918561277,2084668725&fm=21&gp=0.jpg";
+    oP.appendChild(para);
+    oP.getElementsByTagName("img")[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src='" + oI + "')";
+    </script>
+</body>
+
+</html>

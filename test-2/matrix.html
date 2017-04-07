@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body{
+    	padding: 400px;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: .5s;
+    }
+    .box2{
+    	width: 100px;
+    	height: 100px;
+    	background: yellow;
+    	transition: .5s;
+    }
+    
+
+    .box:hover .sp {
+       /*  transform: matrix(1.5 ,0, 0, 1.5,75,150); */
+    }
+   .box2:hover .sp2 {
+/*  transform: matrix(1.5,0.5235987755982988,0,1.5,50,50); */  
+	/* transform: skewY(30deg); */
+      }
+    /* 	matrix(1,0,0,1,0,0)默认
+		  (a,b,c,d,e,f)
+位移：
+轴位移：
+
+	X轴位移=e+x;
+	y轴位移=f+y; */
+
+    /* 缩放 */
+
+
+    /* 	x轴缩放
+	a=a*x;x缩放倍数
+	x=c*x;x缩放倍数
+	e=e*x; x缩放倍数*/
+
+	/* y轴缩放 */
+		/*
+		b=b*x;
+		d=d*x;
+		f=f*x;
+		 */
+/* 先沿X轴位移50px,y轴100px,再沿x轴和y轴缩放1.5倍。 */
+/* 斜切 */
+/* x斜切(deg) */
+	/* c=Math.tan(30*Math.PI/180); */
+	/* y轴斜切 */
+		/* b=Math.tan(30*Math.PI/180) */
+
+/* 角度转弧度 */
+/* pi/180*角度  */
+
+/* 旋转:
+	a:Math.cos(30*Math.PI/180)
+	b:Math.sin(30*Math.PI/180)
+	c:Math.sin(30*Math.PI/180)
+	d:Math.cos(30*Math.PI/180) */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="sp"></span>
+    </div>
+    <div class="box2">
+    	<span class="sp2"></span>
+    </div>
+    <script>
+    var a=Math.cos(45*Math.PI/180),b=Math.sin(45*Math.PI/180),c=-Math.sin(45*Math.PI/180),d=Math.cos(45*Math.PI/180),e=0,f=0;
+    var oBox=document.querySelectorAll("div")
+    oBox[0].style.WebkitTransform=oBox[0].style.transform='rotate(45deg)';
+   oBox[1].style.WebkitTransform=oBox[1].style.transform='matrix('+a+','+b+','+c+','+d+','+e+','+f+')';
+
+    </script>
+</body>
+
+</html>
+<!-- getComputerStyle()获取计算机实际样样式 -->

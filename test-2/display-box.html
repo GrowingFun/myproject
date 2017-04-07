@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,target-densitydpi=device-dpi" />
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    #wrap {
+        width: 200px;
+        height: 200px;
+        border: 2px solid #000;
+        margin: 100px auto;
+        border-radius: 50%;
+    }
+    
+    #wrap ul {
+        margin: 0;
+        padding: 0;
+        height: 200px;
+        position: relative;
+        ;
+        list-style-type: none;
+    }
+    
+    #wrap ul li {
+        width: 2px;
+        height: 10px;
+        background: #000;
+        position: absolute;
+        left: 99px;
+        top: 0;
+        -webkit-transform-origin: center 100px;
+    }
+    
+    #wrap ul li:nth-of-type(1) {
+        -webkit-transform: rotate(0deg);
+    }
+    
+    #wrap ul li:nth-of-type(2) {
+        -webkit-transform: rotate(6deg);
+    }
+    
+    #wrap ul li:nth-of-type(3) {
+        -webkit-transform: rotate(12deg);
+    }
+    
+    #wrap ul li:nth-of-type(4) {
+        -webkit-transform: rotate(18deg);
+    }
+    
+    #wrap ul li:nth-of-type(5) {
+        -webkit-transform: rotate(24deg);
+    }
+    
+    #wrap ul li:nth-of-type(6) {
+        -webkit-transform: rotate(30deg);
+    }
+    
+    #wrap ul li:nth-of-type(7) {
+        -webkit-transform: rotate(36deg);
+    }
+    
+    #wrap ul li:nth-of-type(8) {
+        -webkit-transform: rotate(42deg);
+    }
+    
+    #wrap ul li:nth-of-type(5n+1) {
+        height: 12px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="hour">
+        </div>
+        <div id="min">
+        </div>
+        <div id="sec"></div>
+    </div>
+</body>
+
+</html>

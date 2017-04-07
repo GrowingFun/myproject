@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width:200px;
+			height:200px;
+			background-color:red;
+			display: none;
+		}
+		
+	</style>
+</head>
+<body>
+	<input  id="show" type="button" name="" value="显示/隐藏" placeholder="">
+
+	<div id="box">
+		
+	</div>
+	<script>
+	window.onload=function(){
+		var oBtn1=document.getElementById("show");
+		var odiv=document.getElementById("box");
+		var btn=1;
+		oBtn1.onclick=function(){
+			if (btn) {
+				odiv.style.display="block";
+				btn=!btn;
+			}
+				
+		oBtn2.onclick=function(){
+			if (!btn) {}
+			odiv.style.display="none";
+			btn=!btn;
+		}
+
+	}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <title>Document</title>
+    <script>
+    var m1 = angular.module("app", []);
+    m1.controller("Aaa", function($scope) {
+        /*$scope.name=30333333333333333.222*/
+        /*$scope.name={"name":"ddd"}*/
+        $scope.name = [
+        		{
+        			color:"red",age:10
+        		},
+        		{
+        			color:"yellow",age:20
+        		},{
+        			color:"blue",age:50
+        		}
+        ];
+    })
+    </script>
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <!-- 	<span>{{name | number:2}}</span> -->
+      <!--   <span>{{name | limitTo : 2}}</span> -->
+        <!-- 操作json和数组，截取部他数据 -->
+        <!-- number过滤器会自动加逗号 -->
+        <!-- currency过滤器会自动加美元符号-->
+        <!-- uppercase过滤器会自动变成大写 -->
+        <!-- <pre>
+	{{name|json}}
+</pre> -->
+<!-- <span>{{name|date}}</span>转化为日期格式 -->
+<!-- <p>{{name|orderBy:"age"}}</p> --><!-- 排序，需要是JSON和数组 -->
+<!-- <p>{{name|filter:"red"}}</p> --><!--按条件过滤 -->
+
+    </div>
+</body>
+
+</html>

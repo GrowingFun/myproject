@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="index.css" rel=stylesheet>
+</head>
+<body>
+	<div id="container">
+		<span id="btn"></span>
+	</div>
+	<script>
+		window.onload= function(){
+			var container=document.getElementById("container");
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				if(container.offsetLeft==-200){
+					moveOut();
+				}
+				else {
+					moveBack();
+				}
+
+			}
+		}
+		var timer=null;
+		function moveOut(){
+			clearInterval(timer);
+			timer=setInterval(function(){
+				if(container.offsetLeft==0){
+					clearInterval(timer);
+				} else{
+					container.style.left=container.offsetLeft+10+'px';
+				}
+
+			},30);
+		}
+	function moveBack(){
+  clearInterval(timer);
+  timer=setInterval(function(){
+  if(container.offsetLeft == -200)
+  {
+      clearInterval(timer);
+  }
+  else{
+      container.style.left=container.offsetLeft-10+'px';
+  }
+  },30);
+}
+	</script>
+</body>
+</html>

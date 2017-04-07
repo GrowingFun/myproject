@@ -1,0 +1,87 @@
+/*var fs=require('fs');
+fs.open('1.txt','r',function(err,fd){
+	console.log(err);
+	console.log(fd);
+	if (err) {
+		console.log("文件不存在");
+	}else{
+		console.log("文件找开成功")
+	}
+});
+fs.open('1.txt','r',function(err,fd){
+	console.log(fd)
+})*/
+
+/*var fs=require('fs');
+fs.open('1.txt','w',function(err,fd){
+	console.log(err)
+
+})
+console.log('ok')*/
+
+/*var fs=require('fs');
+var xx=fs.openSync('1.txt','r');
+console.log(xx);*/
+
+/*var fs=require('fs');
+fs.open('1.txt','r',function(err,fd){
+	if (err) {
+		console.log("文件找开失败")
+	}else{
+		var bf1=new Buffer('12');
+		fs.read(fd,bf1,0,2,null,function(err,length,newBf){
+			console.log(bf1.toString())
+			console.log(newBf.toString())
+		})
+	}
+})
+*/
+
+// var fs=require('fs');
+// fs.open('1.txt','r+',function(err,fd){
+// 	if (err) {
+// 		console.log("失败");
+// 	}else{
+// 		var bf1=new Buffer("123",'utf-8');
+// 		fs.write(fd,bf1,0,3,5,function(){
+// 			console.log(arguments)
+// 		})
+// 		fs.write(fd,'1234','5','utf-8');
+// 		fs.close(fd,function(){
+
+// 		})
+// 	}
+	
+
+// })
+
+// var fs=require('fs');
+// var filename='2.txt';
+// fs.writeFile(filename,'hefdjfkjd',function(){
+// 	console.log(arguments)
+// })
+
+
+// fs.appendFile(filename,'-yang',function(){
+// 	console.log(arguments)
+// })
+
+/*fs.exists(filename, function(isExists){
+	if (!isExists) {
+		fs.writeFile(filename,'miaov',function(err){
+			if (err) {
+				console.log("出错")
+			}else{
+				console.log("创建成功")
+			}
+		})
+	}else{
+		fs.appendFile(filename,'-yang',function(err){
+			if (err) {
+				console.log("追加失败")
+			}else{
+				console.log("新内容")
+			}
+		})
+	}
+});*/

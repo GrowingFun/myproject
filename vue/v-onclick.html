@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width userscale=no">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .btns p,
+   .btns span {
+        font-size: 20px;
+        display: inline-block;
+        padding-right: 10px;
+    }
+    .btns{
+          text-align: center;
+    }
+   .btns p {
+        background: #fff;
+        border-radius: 3px;
+        text-align: center;
+        color: #333;
+        padding: 0 80px;
+        vertical-align: middle;
+      
+    }
+    
+    .btns span {
+        border: 1px solid #eee;
+        font-size: 20px;
+        color: #333;
+        text-align: center;
+        padding: 6px 10px;
+        vertical-align: middle;
+    }
+    
+    * {
+        padding: 0;
+        border: none;
+        margin: 0;
+    }
+    
+    body {
+        background: #f6f6f6;
+        height: 100%;
+    }
+    
+    .title {
+        font-size: 20px;
+        color: #333;
+        text-align: left;
+        line-height: 40px;
+        padding-left: 20px;
+    }
+    
+    .user-info img {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    .user-info span {
+        display: inline-block;
+        font-size: 16px;
+        vertical-align: middle;
+    }
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    li {
+        display: -webkit-box;
+        -webkit-box-pack: justify;
+        -webkit-box-align: center;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 10px;
+        padding: 20px 20px;
+    }
+    
+    .right img {
+        width: 200px;
+        height: 80px;
+    }
+    
+    .left>p {
+        padding-bottom: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="title">
+            头条新闻
+        </div>
+        <ul>
+            <li v-for="(item,index) in list" v-on:click="deleteList(index)">
+                <!-- 获取当前索引 -->
+                <div class="left">
+                    <p>{{item.title}}</p>
+                    <div class="user-info">
+                        <p>{{index}}</p>
+                        <img v-bind:src="item.userimgurl" alt="">
+                        <span>{{item.username}}</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <img v-bind:src="item.listImgUrl" alt="">
+                </div>
+            </li>
+        </ul>
+        <div class="btns">
+            <p v-on:click="counter+=1">删除</p>
+            <p v-on:click="counter+=-1">添加</p>
+        </div>
+    </div>
+    <script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "444",
+            counter: 0,
+            list: [{
+                "title": "做一个有理想的人1",
+                "username": "aa",
+                "userimgurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=dd0ec885374d192c9da1a682747c77c4&imgtype=0&src=http%3A%2F%2Fimg17.3lian.com%2Fd%2Ffile%2F201701%2F13%2F82353df21f581908beccd2e8c1449c68.jpg",
+                "listImgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=873a60d133ddf680136f96093c82b351&imgtype=0&src=http%3A%2F%2Fimg1.3lian.com%2F2015%2Fw20%2F46%2Fd%2F69.jpg",
+                "id": "1fds"
+            }, {
+                "title": "做一个有理想的人2",
+                "username": "aa",
+                "userimgurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=dd0ec885374d192c9da1a682747c77c4&imgtype=0&src=http%3A%2F%2Fimg17.3lian.com%2Fd%2Ffile%2F201701%2F13%2F82353df21f581908beccd2e8c1449c68.jpg",
+                "listImgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=873a60d133ddf680136f96093c82b351&imgtype=0&src=http%3A%2F%2Fimg1.3lian.com%2F2015%2Fw20%2F46%2Fd%2F69.jpg",
+                "id": "244"
+            }, {
+                "title": "做一个有理想的人3",
+                "username": "aa",
+                "userimgurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=dd0ec885374d192c9da1a682747c77c4&imgtype=0&src=http%3A%2F%2Fimg17.3lian.com%2Fd%2Ffile%2F201701%2F13%2F82353df21f581908beccd2e8c1449c68.jpg",
+                "listImgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=873a60d133ddf680136f96093c82b351&imgtype=0&src=http%3A%2F%2Fimg1.3lian.com%2F2015%2Fw20%2F46%2Fd%2F69.jpg",
+                "id": "3yy"
+            }, {
+                "title": "做一个有理想的人4",
+                "username": "aa",
+                "userimgurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=dd0ec885374d192c9da1a682747c77c4&imgtype=0&src=http%3A%2F%2Fimg17.3lian.com%2Fd%2Ffile%2F201701%2F13%2F82353df21f581908beccd2e8c1449c68.jpg",
+                "listImgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490182196255&di=873a60d133ddf680136f96093c82b351&imgtype=0&src=http%3A%2F%2Fimg1.3lian.com%2F2015%2Fw20%2F46%2Fd%2F69.jpg",
+                "id":"dsd"
+            }]
+        },
+        methods:{
+            deleteList(index){
+               this.list.splice(index,1)/*删除当前记录*/
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

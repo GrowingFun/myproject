@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <script>
+            var w= window.screen.width;/*获取屏幕尺寸*/
+        var targetW=768;
+        var scale=w/targetW;/*缩放比是当前尺寸比目标尺寸*/
+        var meta=document.createElement("meta");
+        meta.name="viewport";
+        meta.content="width=device-width,user-scalable=no,initial-scale="+scale+",minimum-scale="+scale+",maximum-scale="+scale+"";
+        document.head.appendChild(meta)
+    var html = document.documentElement;
+    var hWidth = html.getBoundingClientRect().width;
+    var w = window.screen.width;
+    html.style.fontSize = hWidth /10 + "px";
+
+    </script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body{
+    	margin: 0;
+    }
+    div {
+        width: 1.5625rem;
+        height: 1.5625rem;
+        float: left;
+    }
+    
+
+    div:nth-of-type(1) {
+        background: red;
+    }
+    
+    div:nth-of-type(2) {
+        background: yellow;
+    }
+    
+    div:nth-of-type(3) {
+        background: blue;
+    }
+    
+    div:nth-of-type(4) {
+        background: green;
+    }
+    
+    div:nth-of-type(5) {
+    	width: 10rem;
+        background: black;
+    }
+    p {
+    position:relative;
+    line-height:1.4rem;
+    /* 3 times the line-height to show 3 lines */
+    height:4.2rem;
+    overflow:hidden;
+    font-size:25px;
+}
+p::after {
+    content:"...";
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:0 20px 1px 45px;
+    background:url(http://css88.b0.upaiyun.com/css88/2014/09/ellipsis_bg.png) repeat-y;
+}
+    </style>
+</head>
+
+<body>
+<!--     <div class="box2">
+</div>
+<div class="box2">
+</div>
+<div class="box2">
+</div>
+<div class="box2">
+</div>
+<div class="box2">
+</div> -->
+    <p>　　长期以来，由于环保部门属于“没有牙齿的老虎”，不得不让位于GDP数据的不断增高，于是青山绿水日益成了很多人记忆中的美好。作为法律监督机关，最高检近年来屡屡在生态领域出手，取得了不俗的成绩：与环境保护部、公安部共同出台环境保护行政执法与刑事司法衔接办法，与最高人民法院共同颁布办理环境污染刑事案件司法解释，合力打击破坏环境资源犯罪；深入开展专项立案监督，建议监管部门移送涉嫌犯罪案件2016件，挂牌督办张百锋等人偷排废酸案等22起重大案件；起诉破坏环境资源犯罪29173人；推广福建、贵州、江西、重庆等地做法，探索“专业化法律监督+恢复性司法实践+社会化综合治理”的生态检察模式，推动环境治理、生态修复。应该说，这是检察机关在实现生态检察过程中的硬功夫，为检察业务弥补部门缺位、尽洪荒之力维护生态、改善民生，而探索出了新的检察路线图。
+
+　　专业化法律监督破解了法律不到位的问题，恢复性司法实践通过探索办案模式解决了生态检察的存在方式，社会化综合治理完善协调配合机制推进了生态检察的长足发展。这三者之间既有对权力滥用的防止，又有对权益损害的惩戒，还有对全民福利的建设和保护制度性的约束，形成了三者相互依存又相互推进的格局，成为检察机关服务大局、保障民生的重要举措，成为强化法律监督职能的重要抓手，为开拓检察业务、增强执法司法合力、强化保障民生、服务社会发展大局谱写了新篇章。
+
+　　生态检察理念的提出，不仅仅在于对破坏生态的行为的事后惩处，更是将制度建设与附加修复生态环境的义务相结合，成为了生态文明建设在检察工作中的靓丽一笔。这既是检察机关立足法律监督职责、保护生态环境的现实需要，也是司法保护生态环境资源的特殊需求促进检察业务向纵深方面进行深化完善的需要，更是“五位一体”总体布局下谋划和推动的检察硕果。
+
+　　生态文明，关系民生福祉。检察机关提出了生态检察的理念，将法律监督与执法交互式递进，将实践性与理论性共融，将惩罚性措施与预防性建设并举，将当前与长远统筹结合，通过构筑行政、民事、刑事“三位一体”的多元化生态环境法律监督保护格局，追求生态检察司法办案法律效果、社会效果、生态效果的有机统一，让人民的福祉得以实现，打好了检察组合拳。
+
+　　党的十八大提出要把生态文明建设放在突出位置，融入经济建设、政治建设、文化建设、社会建设各方面和全过程，努力建设美丽中国。生态检察概念的提出，展示了检察机关积极主动融入大局、聚焦大局、服务大局、保障大局的作为意识，让检察文明成为生态文明中的重要一环，让文明行走在法律的轨道中，让民生奔跑在法治的道路上，这也成为最高检报告中的一道靓丽风景线。</p>
+</body>
+
+</html>

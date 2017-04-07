@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.red{
+			width:300px;
+			background-color:red;
+			color:#000;
+			overflow: hidden;
+	}	
+	.yellow{
+			width:300px;
+			background-color:yellow;
+			color:#000;
+			overflow: hidden;
+	}	
+	</style>
+	
+</head>
+<body>
+	<input id="add" type="button" name="" value="+" placeholder="">
+	<input id="jian" type="button" name="" value="-" placeholder="">
+	<input id="red" type="button" name="" value="红色" placeholder="">
+	<input id="yellow"  type="button" name="" value="黄色" placeholder="">
+	<p id="content">暴雨黄色预警发布 湖北河南迎大暴雨
+19日08时至20日08时，四川盆地东部、重庆、贵州北部、湖南西北部、湖北大部、安徽中北部、江苏西南部、河南、山东、山西、河北中南部、天津、北京中南部以及云南西部、广西南部等地有大雨或暴雨， [详细]
+河南18日起将现入汛最大范围强降水
+受低涡切变影响，河南省今天夜里将出现入汛以来最大范围强降水过程，降水过程具有累积雨量大、降水强度强等特征。 [详细]
+湖南张家界因突降暴雨溪水暴涨
+18日上午11点，在湖南张家界武陵源区十里画廊景区入口处，由于突降暴雨，附近溪水暴涨淹没道路，两辆大巴车</p>
+	<script>
+		window.onload=function(){
+			var oAdd=document.getElementById("add");
+			var oJian=document.getElementById("jian");
+			var oRed=document.getElementById("red");
+			var oYellow=document.getElementById("yellow");
+			var oContent=document.getElementById("content");
+			var i=15;
+			oAdd.onclick=function(){
+				i++;
+				oContent.style.fontSize=i+'px';
+			}
+			oJian.onclick=function(){
+				i--;
+				oContent.style.fontSize=i+'px';
+			}
+			oRed.onclick=function(){
+				oContent.className="red";
+				
+			}
+			oYellow.onclick=function(){
+				oContent.className="yellow";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,userscale=no">
+	 <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	body{
+		padding: 100px;
+	}
+	.active{
+		color: red;
+	}
+	.big{
+		font-size: 20px;
+		transition: all .8s;
+		transform: rotate(360deg);
+		display: inline-block;
+	}
+	</style>
+</head>
+<body>
+	<div id="app" >
+	<p v-if="aa">hello2</p>
+	<button type="button" v-bind:disabled="aa" class="btn btn-primary">确认</button>
+
+	
+
+	</div>
+
+
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				isActive:true,
+				big:false,
+				aa:true
+			},
+			methods:{
+				clickA:function(){
+					this.isActive=!this.isActive;
+					this.big=!this.big;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

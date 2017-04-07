@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css" media="screen">
+input {
+    margin-bottom: 50px;
+}
+</style>
+
+<body>
+    <header id="header" class="">用在页面的头部或者板块的头部</header>
+    <footer>用在页面的底部或者板块的底部</footer>
+    <nav>导航</nav>
+    <hgroup>
+        标题组合
+        <h1>标题1</h1>
+        <!-- 标题 -->
+        <h2>标题2</h2>
+        <!-- 副标题 -->
+    </hgroup>
+    <section>
+        页面中的一个区块，用来划分区域
+    </section>
+    <article>
+        页面中一个独立的一个东西，结构完整，独立文单日，独立博客
+    </article>
+    <aside>
+        和主体相关的附属信息，article一起使用，article附属信息
+    </aside>
+    <figure>
+        里面放媒体，如图片，视频
+        <figcaption>媒体描述信息</figcaption>
+    </figure>
+    <figure>
+        <img src="images/2.png" alt="">
+        <figcaption>explanatory caption</figcaption>
+    </figure>
+    <time datetime="2011-01-12">January 12th, 2011</time>
+    <!-- 时间标签 -->
+    <input list='valList'>
+    <datalist id="valList">
+        <!-- 给上面的input标签提供下拉提示信息 -->
+        <!-- 提示信息列表标签 -->
+        <option value="12">12</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+    </datalist>
+    <details>
+        <!-- 详情信息 -->
+        <summary>title or explanatory caption</summary>
+        <span>dfdsf</span>
+    </details>
+    <address>
+    	定义作者信息及地址信息
+    </address>
+	<mark>标记一个词或一句话</mark>
+	<progress class="progress" value="10" max="100">
+	<!-- 进度条 -->
+		<span>76</span>%<!-- 为了兼容其它浏览器 -->
+	</progress>
+
+	<!-- 怎么样兼容语义化标签 -->
+
+<!-- IE兼容 其它浏览器兼容 :首选创建，然后把标签变成display:block-->
+<script>
+
+document.createElement("header");
+document.createElement("article");
+document.createElement("footer");
+document.createElement("section");
+document.createElement("nav");
+</script>
+<!-- 
+
+<! header,article ,sectioin,footer{
+		dispaly:block;
+} -->
+<!-- google插件支持新增标签 -->
+
+</body>
+</html>

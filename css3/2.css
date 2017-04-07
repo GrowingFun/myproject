@@ -1,0 +1,10 @@
+    .box {
+    	font: 20px/30px "microsoft yahei";
+    	border: 1px solid #333;
+    	padding: 10px;
+    	width: 100%;
+    	-webkit-column-count:4;
+    	-webkit-column-gap:30;
+    	 -webkit-column-rule: 1px solid #eee; 
+    	 box-sizing: border-box;
+    }

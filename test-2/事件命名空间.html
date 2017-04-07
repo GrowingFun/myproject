@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+    </style>
+</head>
+
+<body>
+<input type="button" name="" value="链接" placeholder="">
+<input type="button" name="" value="取消链接" placeholder="">
+<a href="www.baidu.com">百度</a>
+    <script>
+    $("a").on('click.abc',function(){
+        return false;
+    })
+     $("a").on('click.bcd',function(){
+        alert("abc")
+    })   
+
+            $("input").eq(1).click(function(){
+                $("a").trigger('click.abc');
+            })
+            $("input").eq(0).click(function(){
+                $("a").trigger('click.bcd');
+            })
+var str={"name":1,"age":3};
+// console.log(str.name)
+// console.log($.type(str))
+var str1={};
+ str1=str.name;
+str1.name=1111;
+console.log(str.name);
+
+    </script>
+</body>
+
+</html>

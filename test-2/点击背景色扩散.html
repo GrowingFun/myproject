@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width userscale=no">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .box {
+        width: 100px;
+        height: 30px;
+        background: #eee;
+        transition: .3s;
+        transform-origin: center center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    body {
+        padding: 100px;
+    }
+    
+    span {
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: #ccc;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        margin-left: -5px;
+        margin-top: -5px;
+        transition: 1s;
+        opacity: 0;
+    }
+    
+    span.active {
+        animation: myfirst 5s;
+        -webkit-animation: myfirst 5s;
+    }
+    
+    @keyframes myfirst {
+        from {
+            opacity: 1
+        }
+        to {
+            opacity: 0
+        }
+    }
+    
+    @-moz-keyframes myfirst
+    /* Firefox */
+    
+    {
+        from {
+            opacity: 1
+        }
+        to {
+            opacity: 0
+        }
+    }
+    
+    @-webkit-keyframes myfirst
+    /* Safari 和 Chrome */
+    
+    {
+        from {
+            opacity: 1
+        }
+        to {
+            opacity: 0
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <span></span>
+    </div>
+    <script>
+    var oBox = document.getElementById("box");
+    var ospan = oBox.getElementsByTagName("span");
+
+
+    oBox.addEventListener("touchstart", function() {
+        ospan[0].className = "active";
+        ospan[0].style.WebkitTransform = "scale(20)";
+        setTimeout(function() {
+            ospan[0].className = "";
+            ospan[0].style.WebkitTransform = "";
+
+        }, 1000);
+    })
+    </script>
+</body>
+
+</html>

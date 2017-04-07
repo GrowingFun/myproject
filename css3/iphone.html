@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	body{
+		background: #000;
+	}
+	.box{
+		display: inline-block;
+		font-size: 50px;
+		color: rgba(255,254,255,.5);
+		text-align: center;
+		background: -webkit-linear-gradient(-30deg,rgba(255,255,255,0.3) 100px,rgba(255,255,255,1) 150px,rgba(255,255,255,0) 180px,rgba(255,255,255,1) 240px) no-repeat -300px 0;
+		-webkit-background-clip: text;
+		transition: 6s;
+	}
+	.box:hover{
+
+		background-position:1000px 0px;
+	}
+	</style>
+	
+</head>
+<body>
+	<div class="box">
+		向左滑动
+	</div>
+</body>
+</html>

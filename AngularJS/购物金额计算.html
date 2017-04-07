@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <title>Document</title>
+    <script>
+    function Aaa($scope) {
+        $scope.sum1 = {
+            price: 1,
+            count: 1,
+            fre: 10
+        };
+        $scope.sum = function() {
+            return $scope.sum1.price * $scope.sum1.count;
+        }
+        $scope.$watch('sum()', function(newVal,oldVal) {
+             	$scope.sum1.fre=newVal >= 100 ? 0 : 10;
+        })/*加true之后是深度监听*/
+    }
+    </script>
+    <!-- $watch监听 -->
+</head>
+
+<body>
+    <div ng-controller="Aaa">
+        <p>价格：
+            <input type="text" ng-model="sum1.price">
+        </p>
+        <p>个数：
+            <input type="text" ng-model="sum1.count">
+        </p>
+        <p>总费用：<span>{{sum()|currency:'￥'}}</span>
+        <p>运费：<span>{{sum1.fre|currency:'￥'}}</span></p>
+    </div>
+</body>
+
+</html>

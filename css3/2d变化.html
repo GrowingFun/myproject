@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .box {
+        width: 200px;
+        height: 200px;
+        background: red;
+        animation: active 2s infinite;
+    }
+    
+    @keyframes active {
+        0% {
+            transform: rotate(0deg) skewY(20deg);
+            opacity: 0;
+
+        }
+        50% {
+            transform: rotate(80deg) skewY(80deg);
+            opacity: .5;
+        }
+        100% {
+            transform: rotate(180deg) skewY(150deg);
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes active {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(80deg);
+        }
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+</body>
+
+</html>

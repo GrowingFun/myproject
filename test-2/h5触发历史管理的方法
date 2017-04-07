@@ -1,0 +1,12 @@
+触发历史管理的方法
+hash,页面跳转，pushState
+onhashchange事件监听
+当hash变化的时候，就是出发该事件
+h5下面的pushState
+
+history.pushState(数据，‘’);
+onpupstate 事件监听
+
+window.onpopstate=function(){
+	div=ev.state;
+}

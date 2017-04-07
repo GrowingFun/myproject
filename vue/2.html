@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" >
+        <span v-on:click="clickb">{{message.aa}}</span>
+        <ul>
+        	<li></li>
+        </ul>
+    </div>
+    <script>
+    let data = {
+        message:{
+        	"aa":22,
+        	"bb":44
+        }
+    }
+    var vm = new Vue({
+        el: "#app",
+        data: data,
+        methods:{
+        	clickHandle(){
+        		alert("dddd")
+        	},
+        	clickb(){
+        		alert("ccc")
+        	}
+        }
+    })
+
+
+    </script>
+</body>
+
+</html>

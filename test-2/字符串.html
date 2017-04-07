@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="input" type="text" name="" value="" placeholder="">
+    <input id="btn" type="button" name="" value="检测" placeholder="">
+    <script>
+    // var str='  妙味课堂';
+    // alert(str.length);
+    // // alert(str.charAt(12));
+    // // alert(str.charCodeAt(2));
+    // alert(str.charCodeAt(1));
+    var oInput = document.getElementById('input');
+    var oBtn = document.getElementById("btn");
+    
+    oBtn.onclick = function() {
+    	var str = oInput.value;
+        detectNum(str);
+        
+    }
+
+
+    function detectNum(str) {
+        var n = 0;
+        for (var i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) > 57 && str.charCodeAt(i) < 48) {
+                console.log(str.charCodeAt(i));
+            }
+        }
+        return true;
+    }
+    </script>
+
+</body>
+
+</html>

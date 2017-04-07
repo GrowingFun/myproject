@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		p{
+			font-size: 100px;
+			color:#000;
+			text-shadow: 2px 2px 4px #000;
+			text-align:center;
+			border:1px solid #000;
+			transition: 1s;
+			-webkit-text-stroke:1px red;/*描边*/
+			direction:rtl;
+			unicode-bidi:bidi-override;/*文字反向*/
+
+
+		}
+		p:hover{
+			color:rgba(0,0,0,0);
+			text-shadow: 0 0 30px rgba(0,0,0,0.5);
+			cursor:pointer;
+		}
+		p:selection{
+			background-color:black;
+		}
+		p:first-letter{
+			font-size: 50px;/*首行缩进*/
+		}
+		h2{
+			overflow: hidden;
+			border:1px solid red;
+			width:300px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+
+		}
+
+		
+	</style>
+</head>
+<body>
+<div class="text">
+	<p>文字阴影</p>
+	<h2>文字阴影文字阴影文字阴影文字阴影</h2>
+	
+</div>
+
+</body>
+</html>

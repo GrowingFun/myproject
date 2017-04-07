@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+/*	li{
+		float:left;
+		height:120px;
+		width:100px;
+		background-color:red;
+	}
+	div{
+		margin-top:20px;
+		margin-bottom:5px;
+	}
+	.box2{
+		clear:both;
+	}*/
+	
+</style>
+<body>
+<ul id="list">
+	<li>
+		<h2>我是标题1</h2>
+		<ul>
+			<li>小红</li>
+			<li>小兰</li>
+			<li>小张</li>
+		</ul>
+	</li>
+	<li>
+		<h2>我是标题2</h2>
+		<ul>
+			<li>小青</li>
+			<li>小蓝</li>
+			<li>小王</li>
+		</ul>
+	</li>
+	<div>
+
+		 	<li>1</li>
+		 	<li>3</li>
+		 	<li>4</li>
+
+	</div>
+	<li>
+		<h2>我是标题3</h2>
+		<ul	>
+			<li>张三</li>
+			<li>张四</li>
+			<li>张五</li>	
+		</ul>
+
+	</li>
+</ul>
+	<script>
+
+window.onload=function(){
+	var oList=document.getElementById("list");
+	var oUl=oList.getElementsByTagName("ul");
+	var oLi=null;
+	for (var i = 0; i < oUl.length; i++) {
+		oLi=oUl[i].getElementsByTagName("li");
+		for (var j = 0; j < oLi.length; j++) {
+			oLi[j].style.border="1px solid red";
+		}
+	}
+
+}
+
+
+	</script>
+</body>
+</html>

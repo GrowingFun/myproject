@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+	<title>Document</title>
+	<script>
+		var m1=angular.module("app",[]);
+		m1.controller("Aaa",["$scope",function($scope){
+			$scope.name="aaa"
+			$scope.a=false;
+			$scope.a=false;
+			$scope.href="www.baidu.com";
+			$scope.font="{fontSize:'50px',color:'red'}";
+			$scope.aa=function(){
+				$scope.a=!$scope.a;
+				$scope.b=!$scope.b;
+			}
+		}])
+	</script>
+	<style type="text/css" media="screen">
+	body{
+		padding: 100px;
+	}
+	span{
+		cursor: pointer;
+		transition: 1s;
+	}
+		span.active{
+			background: red;
+			display: block;
+			transform-origin: center center;
+
+		}
+		span.yellow{
+			display: block;
+			width: 20px;
+			transform:rotate(360deg);
+		}
+		span.font{
+			font-size: 50px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div ng-controller="Aaa">
+		<span ng-style="{color:'red',fontSize:'20px'}" ng-click="aa()">{{name}}</span>
+		<a ng-href="{{href}}"></a>
+		<img ng-src="" alt="">
+		<a ng-attr-href="{{url}}"  ng-style="{{font}}">re</a>
+	</div>
+</body>
+</html>

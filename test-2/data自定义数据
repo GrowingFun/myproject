@@ -1,0 +1,16 @@
+data自定义数据
+<div data-miaov="秒味"></div>
+<div data-miaov-all="ddd"></div>//三结
+
+
+h5的自定义属性获取：
+window.onload=function(){
+	var oDiv=document.getElementById("div")
+	alert(oDiv.dataset.miaov)
+}
+
+h5的自定义属性获取三结
+window.onload=function(){
+	var oDiv=document.getElementById("div")
+	alert(oDiv.dataset.miaovAll)
+}

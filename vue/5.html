@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width userscale=no">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    .red {
+        color: red;
+    }
+    
+    #app {
+        text-align: center;
+        padding: 0 30px;
+    }
+    
+    input,
+    button {
+        text-align: center;
+        display: inline-block;
+        margin: 20px 0;
+        margin-top: 20px;
+        margin-bottom: 0;
+        line-height: 30px;
+        width: 100%;
+        text-align: left;
+    }
+    
+    input {
+        padding: 0 2px;
+    }
+    
+    button {
+        text-align: center;
+        font-size: 16px;
+        color: #999;
+        border: none;
+        line-height: 36px;
+    }
+    
+    button.active {
+        background: rgba(241, 56, 56, 0.76);
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        line-height: 36px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+            <input type="text" placeholder="用户名" name="mobile" v-model="mobile">
+            <br>
+            <input type="password" placeholder="密码" name="password" v-model="password">
+            <br>
+            <!-- <button class="active"  type="submit" class="btn btn-primary" v-if="mobile&&password">确认</button>
+ <button disabled  type="submit" class="btn btn-primary" v-else>确认</button> -->
+            <button v-bind:class="{active:mobile&&password}" type="button" class="btn btn-primary">确认</button>
+    </div>
+    <script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            mobile: '',
+            password: '',
+            message: "ddd"
+        },
+        methods: {
+            clickLi() {
+                this.classn = !this.classn;
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

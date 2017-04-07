@@ -1,0 +1,15 @@
+ oDiv.addEventListener("touchend",function(){
+        	oDiv.style.WebkitTransform="skew(-40deg,-40deg)";
+        })
+
+ skew:斜切。有两种，x轴斜切和Y轴斜切，单位都是deg
+
+ totate旋转，单位都是deg
+scale没有单位，在原来大小的多少倍 scale(2)缩放2倍。
+scaleX,scaleY两个方向都可以缩放。
+
+以上都是围绕中心点进行变化的。
+
+
+translate:位移，分为x和y两个方向,默认向X方向位移。
+translate-origin:center center;围绕哪里进行旋转,单位可以是：关键字和百分比，距离耽误可以是(px,em,rem...)

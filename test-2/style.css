@@ -1,0 +1,12 @@
+.box {
+  width: 500px;
+}
+.box2 {
+  width: 500px;
+  height: 500px;
+  background: red;
+  transition: 1s;
+}
+.box2 p {
+  color: yellow;
+}

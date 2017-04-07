@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    li {
+        margin-bottom: 20px;
+        list-style-type: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul id="list">
+            <li>
+                <input type="button" name="" value="-" placeholder="">
+                <strong>0</strong>
+                <input type="button" name="" value="+" placeholder=""> 单价：
+                <em>44元</em> 小计：
+                <span>55元</span>
+            </li>
+            <li>
+                <input type="button" name="" value="-" placeholder="">
+                <strong>0</strong>
+                <input type="button" name="" value="+" placeholder=""> 单价：
+                <em>44元</em> 小计：
+                <span>55元</span>
+            </li>
+            <li>
+                <input type="button" name="" value="-" placeholder="">
+                <strong>0</strong>
+                <input type="button" name="" value="+" placeholder=""> 单价：
+                <em>44元</em> 小计：
+                <span>55元</span>
+            </li>
+            <li>
+                <input type="button" name="" value="-" placeholder="">
+                <strong>0</strong>
+                <input type="button" name="" value="+" placeholder=""> 单价：
+                <em>44元</em> 小计：
+                <span>55元</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+    window.onload = function() {
+
+        var oUl = document.getElementById("list");
+        var oLi = oUl.getElementsByTagName("li");
+        for (var i = 0; i < oLi.length; i++) {
+        	add(oLi[i]);
+        }
+    }
+    function add(oLi) {
+
+        var oInput = oLi.getElementsByTagName("input");
+        var oStrong = oLi.getElementsByTagName("strong")[0];
+        var oSpan = oLi.getElementsByTagName("span")[0];
+        var oEm = oLi.getElementsByTagName("em")[0];
+        var n = Number(oStrong.innerHTML);
+        var j = parseInt(oEm.innerHTML);
+        oSpan.innerHTML = n * j;
+        console.log(j)
+
+        oInput[1].onclick = function() {
+            n++;
+            oSpan.innerHTML = n * j;
+            oStrong.innerHTML = n;
+        }
+
+        oInput[0].onclick = function() {
+            n--;
+            if (n < 0) {
+                n = 0;
+            }
+            oSpan.innerHTML = n * j;
+            oStrong.innerHTML = n;
+        }
+
+    }
+    </script>
+</body>
+
+</html>

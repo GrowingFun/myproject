@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    var arr = [];
+    var a = 'w';
+    var arrAfter = [2, 4, 5, 6, 7, 8, 9,3,5,6,7,8,1,3,9,5]
+    for (var i = 0; i < arrAfter.length; i++) {
+        if (i > 10) {
+            arr.shift();
+            arr.push(a)
+        } else {
+            arr.push(arrAfter[i])
+        }
+
+    }
+
+
+/*
+    if (arr.length > 10) {
+        arr.shift();
+        arr.push(a)
+    }
+*/
+    console.log(arr)
+    </script>
+</body>
+
+</html>

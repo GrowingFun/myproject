@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input id="add" type="button" name="" value="+" placeholder="">
+	<input id="jian" type="button" name="" value="-" placeholder="">
+	<p id="content">fjdsklfjdsflkjjjjjjjfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+	<script>
+		window.onload=function(){
+			var oAdd=document.getElementById("add");
+			var oJian=document.getElementById("jian");
+			var oContent=document.getElementById("content");
+			var i=15;
+			oAdd.onclick=function(){
+				i++;
+				oContent.style.fontSize=i+'px';
+			}
+			oJian.onclick=function(){
+				i--;
+				oContent.style.fontSize=i+'px';
+			}
+		}
+	</script>
+</body>
+</html>

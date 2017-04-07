@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    
+    window.onload = function() {
+    	var json = {};
+        var oDiv = document.getElementById("div1");
+        var oInput = document.getElementById("input1")
+        oInput.onclick = function() {
+        	var num=Math.random();
+        	var arr=randowNum(35, 7);
+        	json[num]=arr;
+            oDiv.innerHTML = arr;
+            window.location.hash=num;
+
+
+        }
+        window.onhashchange=function(){
+        	oDiv.innerHTML=json[window.location.hash.substring(1)];
+        }
+
+        function randowNum(sum, num) {
+            var arr = [];
+            var newArr = [];
+            for (var i = 0; i < sum; i++) {
+                arr.push(i);
+            }
+            for (var i = 0; i < num; i++) {
+                newArr.push(arr.splice(Math.floor(Math.random() * arr.length), 1))
+            }
+            return newArr;
+        }
+
+
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" name="" value="随机选择" placeholder="" id="input1">
+    <div id="div1"></div>
+</body>
+
+</html>

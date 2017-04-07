@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <link rel="stylesheet" type="text/css" href="style/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="style/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="style/css/weui_mask.css">
+    <link rel="stylesheet" type="text/css" href="style/css/weui_toast.css">
+    <link rel="stylesheet" type="text/css" href="style/css/style.css?v2-2">
+    <link rel="stylesheet" type="text/css" href="package/Swiper-3.4.1/dist/css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="package/css3-fall-leaves/leaves.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="script/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="package/css3-fall-leaves/leaves.js" type="text/javascript" charset="utf-8"></script>
+    <script src="script/flexible.js" type="text/javascript"></script>
+    <title>九派悦读打卡</title>
+</head>
+
+<body class="b-perlist">
+    <div id="app">
+        <div class="header">
+            <div class="banner-bg night">
+                <div class="bg-img dayimg">
+                    <img src="style/images/day.png" alt="">
+                </div>
+                <div class="bg-img nightimg">
+                    <img src="style/images/night.png" alt="">
+                </div>
+                <div id="leafContainer"></div>
+                <div id="star"></div>
+                <div id="star2"></div>
+                <div class="info-wrap">
+                    <div class="user-info">
+                        <div class="img-wrap" style="background:url(style/images/2.png)#fff no-repeat center center;background-size: cover;width: 1.653333rem;height: 1.653333rem;">
+                        </div>
+                        <p>正午拾光</p>
+                    </div>
+                    <div class="clock-status">
+                        <div class="add-time">
+                            <p class="time-tag">03/06</p>
+                            <span class="small-tag">加入时间</span>
+                        </div>
+                        <div class="clock-days">
+                            <p class="time-tag" v-bind:class="{scale:clockstatus}">{{currDays.length}}<span class="small-tag">天</span></p>
+                            <p class="small-tag">共打卡</p>
+                        </div>
+                    </div>
+                    <div class="clock-btn" v-bind:class="{disabled:clockstatus}" v-on:click="clockClick()">
+                        <p v-if="clockstatus">今日已打卡</p>
+                        <p v-else>今日打卡</p>
+                    </div>
+                </div>
+                <div class="wrap-box">
+                    <div class="wrap">
+                        <div class="clock-detail-box">
+                            <div class="swiper-container">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide" v-for="(item,index) in days" v-bind:class="{active:index+1>currDays.length?false:true}">
+                                        <span>{{index+1}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="active-tag">
+                                <a href=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-contain main-active">
+            <ul class="contain-box">
+                <!-- 三张图 -->
+                <li class="list">
+                    <div class="l-top">
+                        <div class="img-wrap">
+                            <img src="style/images/4.png" alt="">
+                        </div>
+                        <div class="nick-wrap">
+                            <div class="nickname">
+                                正午拾光
+                            </div>
+                            <div class="add-time">
+                                3月8日加入
+                            </div>
+                        </div>
+                        <div class="l-t-right">
+                            <div class="card-status">
+                                已连续打卡<span>5</span>天
+                            </div>
+                            <div class="collect-wrap" v-bind:class={active:collect,"scale":scalesmall}  v-on:click="clickCollect()">
+                                <div class="collect">
+                                </div>
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-wrap-other">
+                        <div class="detail">
+                            <p>人类天生喜欢听故事，希望从故事中寻找意义，少数人掌握了讲故事的技巧，编撰了精彩的故事，让大多数听故事的人信以为真。讲故事的人制定了游戏规则，听故事的人被玩弄于鼓掌之中。不同时代有不同故事。</p>
+                        </div>
+                        <div class="img-box">
+                            <div class="img-wrap">
+                                <img src="style/images/3.png" alt="">
+                            </div>
+                            <div class="img-wrap">
+                                <img src="style/images/3.png" alt="">
+                            </div>
+                            <div class="img-wrap">
+                                <img src="style/images/3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--  一张图 -->
+                <li class="list">
+                    <div class="l-top">
+                        <div class="img-wrap">
+                            <img src="style/images/4.png" alt="">
+                        </div>
+                        <div class="nick-wrap">
+                            <div class="nickname">
+                                正午拾光
+                            </div>
+                            <div class="add-time">
+                                3月8日加入
+                            </div>
+                        </div>
+                        <div class="l-t-right">
+                            <div class="card-status">
+                                已连续打卡<span>5</span>天
+                            </div>
+                            <div class="collect-wrap active">
+                                <div class="collect">
+                                </div>
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-wrap-other">
+                        <div class="detail">
+                            <p>人类天生喜欢听故事，希望从故事中寻找意义，少数人掌握了讲故事的技巧，编撰了精彩的故事，让大多数听故事的人信以为真。讲故事的人制定了游戏规则，听故事的人被玩弄于鼓掌之中。不同时代有不同故事。</p>
+                        </div>
+                        <div class="img-box one-img">
+                            <div class="img-wrap">
+                                <img src="style/images/3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--  无图 -->
+                <li class="list">
+                    <div class="l-top">
+                        <div class="img-wrap">
+                            <img src="style/images/4.png" alt="">
+                        </div>
+                        <div class="nick-wrap">
+                            <div class="nickname">
+                                正午拾光
+                            </div>
+                            <div class="add-time">
+                                3月8日加入
+                            </div>
+                        </div>
+                        <div class="l-t-right">
+                            <div class="card-status">
+                                已连续打卡<span>5</span>天
+                            </div>
+                            <div class="collect-wrap">
+                                <div class="collect">
+                                </div>
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-wrap-other">
+                        <div class="detail">
+                            <p>人类天生喜欢听故事，希望从故事中寻找意义，少数人掌握了讲故事的技巧，编撰了精彩的故事，让大多数听故事的人信以为真。讲故事的人制定了游戏规则，听故事的人被玩弄于鼓掌之中。不同时代有不同故事。</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 收藏tost -->
+        <div id="toast" style="display: none;">
+            <div class="weui_mask_transparent"></div>
+            <div class="weui_toast">
+                <i class="weui_icon_toast iconfont icon-right"></i>
+                <p class="weui_toast_content">已收藏</p>
+            </div>
+        </div>
+    </div>
+    <script src="package/Swiper-3.4.1/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 8,
+        resistance: true,
+        controlBy: 'slide',
+        autoplay: false
+    });
+    var date = new Date();
+    var currentHours = date.getHours();
+    var a = 10;
+    var star = document.getElementById("star");
+    setTimeout(function() {
+
+        if (a > 5) {
+            $(".dayimg").fadeOut(1000)
+            $(".nightimg").fadeIn(1300);
+
+            $("#leafContainer").hide();
+            $(".banner-bg").addClass('night').removeClass('day');
+            setTimeout(function() {
+                $("#star").show().addClass('startransform');
+            }, 5000);
+            setTimeout(function() {
+                $("#star2").show().addClass('startransform');
+            }, 20000);
+        } else if (currentHours >= 7) {
+            $("#leafContainer").show();
+            $(".nightimg").fadeOut(1000)
+            $("#star").hide().removeClass('startransform');
+            $(".dayimg").fadeIn(1300);
+            $(".banner-bg").addClass('day').removeClass('night');
+        }
+
+    }, 1000);
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            clockstatus: false,
+            currDays: [1, 2, 3],
+            collect: false,
+            scalesmall: true,
+            days: [{
+                "cur": 1
+            }, {
+                "cur": 2
+            }, {
+                "cur": 3
+            }, {
+                "cur": 4
+            }, {
+                "cur": 5
+            }, {
+                "cur": 6
+            }, {
+                "cur": 7
+            }, {
+                "cur": 8
+            }]
+        },
+        methods: {
+            clockClick: function() {
+                if (this.clockstatus == false) {
+                    this.clockstatus = !this.clockstatus;
+                    vm.currDays.push(4)
+                    return false;
+                }
+
+            },
+            clickCollect: function() {
+                this.collect = !this.collect;
+                this.scalesmall = !this.scalesmall;
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

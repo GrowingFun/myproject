@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 异步javascript和xmljs内置对象 -->
+<!--数据交互-->
+
+	<input type="button" id="btn" name="" value="提交" placeholder="">
+	<script>
+		var Btn=document.getElementById("btn");
+		Btn.onclick=function(){
+			var xhr=new XMLHttpRequest();
+			xhr.open('get','1.txt','true');
+			xhr.send();
+			xhr.onreadystatechange=function(){
+				if(xhr.readState==4){
+					alert(xhr.responseText);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

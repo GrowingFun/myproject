@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+	<title>Document</title>
+<script>
+	function Aaa($scope,$timeout){
+		$scope.name="hello";
+/*		$timeout(function(){
+			$scope.name="hi";
+		},2000)*/
+		$scope.show=function(){
+			$scope.name="hi"
+		}
+
+	}
+</script>
+<style type="text/css" media="screen">
+div{
+	width: 100px;
+	height: 100px;
+	background: blue;
+}
+span{
+	color: #fff;
+}
+	
+</style>
+</head>
+<body>
+<!-- 	<div ng-controller="Aaa" ng-click="show()">
+	<span>{{name}}</span>
+</div> -->
+<input type="text" ng-model="name">
+<p>{{name}}</p>
+	<!-- 双向数据绑定，MVVM -->
+</body>
+</html>

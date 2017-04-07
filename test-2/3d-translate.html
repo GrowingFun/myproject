@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        padding: 200px;
+    }
+    
+    .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: 4s;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .wrap {
+        perspective: 200px;
+        position: relative;
+    }
+    
+    .box1 {
+        width: 100px;
+        height: 100px;
+        background: green;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: right center;
+    }
+    
+    .box2 {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: left center;
+    }
+    
+    .box3 {
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        position: absolute;
+        left: 100px;
+        top: 0;
+        transform-origin: right center;
+    }
+
+    .box4 {
+        width: 100px;
+        height: 100px;
+        background: black;
+        position: absolute;
+        left: 200px;
+        top: 0;
+        transform-origin: left center;
+    }
+        .box5 {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        position: absolute;
+        left: 200px;
+        top: 0;
+        transform-origin: right right;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+        </div>
+        <div class="box1">
+        </div>
+        <div class="box2">
+        </div>
+        <div class="box3">
+        </div>
+        <div class="box4">
+        </div>
+                <div class="box5">
+        </div>
+    </div>
+<!--     3D旋转：rotateX(),rotateY(),rotateZ();
+		3D位移：translateX(),translateY(),translateZ(), -->
+    <script>
+    var aDiv = document.querySelectorAll("div");
+   aDiv[2].style.WebkitTransform = aDiv[2].style.transform = "rotateY(-90deg)";
+    aDiv[3].style.WebkitTransform = aDiv[3].style.transform = "rotateY(300deg)";
+    aDiv[3].style.WebkitTransform = aDiv[3].style.transform = "rotateY(300deg)";
+    aDiv[4].style.WebkitTransform = aDiv[4].style.transform = "rotateY(-20deg)";
+    aDiv[5].style.WebkitTransform = aDiv[5].style.transform = "rotateY(-50deg)";
+    aDiv[6].style.WebkitTransform = aDiv[6].style.transform = "skewY(30deg) rotateY(-180deg)";
+    </script>
+</body>
+
+</html>

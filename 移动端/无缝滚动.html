@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <script>
+    var html = document.documentElement;
+    var view = html.getBoundingClientRect().width;
+    html.style.fontSize = view / 10 + "px";
+    </script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+    }
+    
+    .wrap {
+        position: relative;
+        width: 10rem;
+        overflow: hidden;
+        height: 6rem;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    img {
+        width: 10rem;
+        height: 6rem;
+    }
+    
+    li {
+        float: left;
+        list-style-type: none;
+    }
+    
+    ul {
+        clear: both;
+        width: 40rem;
+        height: 6rem;
+        position: absolute;
+        left: 0rem;
+        top: 0;
+        overflow: hidden;
+
+    }
+    
+    li a {
+        display: block;
+        width: 10rem;
+        height: 6rem;
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    span {
+        display: inline-block;
+        width: 0.3125rem;
+        height: 0.3125rem;
+        border-radius: 50%;
+        margin: 0 0.156rem;
+        border: 1px solid #fff;
+    }
+    
+    span.active {
+        background: #fff;
+    }
+    
+    .btn {
+        position: absolute;
+        left: 50%;
+        bottom: 0.3125rem;
+        margin-left: -0.9rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="ul">
+            <li>
+                <a style="background:url(image/1.png)" href=""></a>
+            </li>
+            <li>
+                <a style="background:url(image/2.png)" href=""></a>
+            </li>
+            <li>
+                <a style="background:url(image/3.png)" href=""></a>
+            </li>
+            <li>
+                <a style="background:url(image/4.png)" href=""></a>
+            </li>
+        </ul>
+        <div class="btn">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script>
+    var list = document.getElementById("ul")
+
+    var aSpan = document.getElementsByTagName("span");
+    var disX = 0;
+    var listL = 0;
+    var left = 0;
+
+    /*   rightGo();
+
+        function rightGo() {
+            oUl.addEventListener("touchstart", function() {
+                if (left >-40) {
+                    left -= 10;
+                } else {
+                    return false;
+                }
+            })
+            oUl.addEventListener("touchend", function() {
+                if (left >-40) {
+                    removeActive();
+                    aSpan[Math.abs(left / 10)].className = "active";
+                    this.style.left = left + 'rem';
+                } else {
+                    return false;
+                }
+            })
+        }
+
+
+        function leftGo() {
+            oUl.addEventListener("touchstart", function() {
+                if (Math.abs(left) < 40) {
+                    left += 10;
+                } else if (Math.abs(left) < 10){
+                    return false;
+                }
+            })
+            oUl.addEventListener("touchend", function() {
+                if (Math.abs(left) < 40) {
+                    removeActive();
+                    aSpan[Math.abs(left / 10)].className = "active";
+                    this.style.left = left + 'rem';
+                } else if (Math.abs(left) < 10) {
+                    return false;
+                }
+            })
+        }
+
+        function removeActive() {
+            for (var i = 0; i < aSpan.length; i++) {
+                aSpan[i].className = "";
+            }
+        }*/
+    list.addEventListener('touchstart', start);
+    list.addEventListener('touchmove', move);
+    list.addEventListener('touchend', end);
+
+    function start(ev) {
+        var e = ev.changedTouches[0];
+        disX = e.pageX;
+        listL = this.offsetLeft;
+        list.style.transition="none";
+    }
+
+    function move(ev) {
+        var e = ev.changedTouches[0];
+        console.table(e)
+        list.style.left = (e.pageX - disX) + listL + 'px';
+    }
+
+    function end(ev) {
+        var e = ev.changedTouches[0];
+        console.table(e)
+        var num = Math.round(list.offsetLeft / 320);
+        list.style.left = num * 320 + 'px';
+         list.style.transition="0.5s";
+    }
+    </script>
+</body>
+
+</html>

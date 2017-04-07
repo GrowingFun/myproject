@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Document</title>
+    <script>
+        var html = document.documentElement;
+        var hWidth = html.getBoundingClientRect().width;
+         var w = window.screen.width;
+        html.style.fontSize=hWidth/16+"px";
+
+
+    </script>
+    <style type="text/css" media="screen">
+    div {
+        float: left;
+        height: 80px;
+        width: 80px;
+        border: 1px solid red;
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    div:nth-of-type(1) {
+        background: red;
+    }
+    
+    div:nth-of-type(2) {
+        background: yellow;
+    }
+    
+    div:nth-of-type(3) {
+        background: green;
+    }
+    
+    div:nth-of-type(4) {
+        background: blue;
+    }
+    </style>
+    <script>
+    </script>
+</head>
+
+<body>
+    <div class="head">
+    </div>
+    <div class="nav">
+    </div>
+    <div class="list">
+    </div>
+    <div class="list">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		window.onload=function(){
+			setInterval(data,1000);
+			 data()
+			// alert(new Date());
+		function data(){
+			var myTime=new Date();
+			var iYear=myTime.getFullYear();
+			var iMoth=myTime.getMonth()+1;
+			var iDate=myTime.getDate();
+			var iWeek=myTime.getDay();
+			var iHours=myTime.getHours();
+			var iMinutes=myTime.getMinutes();
+			var iSeconds=myTime.getSeconds();
+			if (iWeek==0) {iWeek='星期天'};
+			if (iWeek==1) {iWeek='星期一'};
+			if (iWeek==2) {iWeek='星期二'};
+			if (iWeek==3) {iWeek='星期三'};
+			if (iWeek==4) {iWeek='星期四'};
+			if (iWeek==5) {iWeek='星期五'};
+			if (iWeek==6) {iWeek='星期六'};
+			function minute(count){
+	
+	if (iMinutes<10) {
+		iMinutes='0'+iMinutes;
+	}
+		if (iSeconds<10) {
+		iSeconds='0'+iSeconds;
+	}
+}
+
+			document.body.innerHTML='时间:'+iYear+'年'+iMoth+'月'+iDate+'日'+iWeek+ww(iHours)+'时'+ww(iMinutes)+'分'+ww(iSeconds);
+}
+function ww(n){
+return n<10?'0'+n:n;
+}
+}
+	</script>
+</body>
+</html>

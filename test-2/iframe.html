@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" name="" value="改变" id="input1">
+    <iframe src="hanshu2.html" id="iframe1"></iframe>
+    <script>
+    window.onload = function() {
+        var oInput = document.getElementById("input1");
+        var oIfram1 = document.getElementById("iframe1")
+        oInput.onclick = function() {
+            oIfram1.contentWindow.document.getElementById('div1').style.color = "red";
+           // oIfram1.contentDocument.getElementById('div1').style.color = "red";//ie67不兼容
+        }
+    }
+    </script>
+</body>
+
+</html>

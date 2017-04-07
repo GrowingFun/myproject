@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+    <script src="" type="text/javascript"></script>
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    html{
+    	  transition: all 0.3s;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        transition: all 0.3s;
+    }
+    
+    .page1 {
+        background: red;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+    
+    .page2 {
+        background: green;
+        width: 100%;
+           position: absolute;
+            left: 0;
+    }
+    
+    .page3 {
+        background: yellow;
+        width: 100%;
+       position: absolute;
+        left: 0;
+    }
+    
+    .btn span {
+        width: 20px;
+        height: 20px;
+        display: block;
+        border: 1px solid #eee;
+        border-radius: 50%;
+        box-sizing: border-box;
+        background-color: #fff;
+        margin-bottom: 10px;
+    }
+    
+    .btn span.active {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .btn {
+        position: fixed;
+        top: 50%;
+        margin-top: -30px;
+        right: 10px;
+        z-index: 10;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="btn">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="wrap">
+        <div class="page1"></div>
+        <div class="page2"></div>
+        <div class="page3"></div>
+    </div>
+    <script>
+     $(".page1").css('top', 0);
+     $(".page2").css('top', $(window).height()*1);
+     $(".page3").css('top', $(window).height()*2);
+
+     $(".page1").css('height', $(window).height());
+     $(".page2").css('height', $(window).height());
+     $(".page3").css('height', $(window).height());
+
+    $(".btn").find('span').click(function() {
+    	var index=$(this).index();
+    	$(this).addClass('active').siblings('span').removeClass("active");
+    	// $(document).animate({scrollTop: $(window).height()*(index)}, 300)
+    	$(document).scrollTop($(window).height()*(index))
+    })
+    </script>
+</body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input id="btn" type="button" name="" value="自动生成新闻" placeholder="">
+	<div class="news">
+		<ul id="list">
+			
+		</ul>
+		
+	</div>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById("btn");
+			var oList=document.getElementById("list");
+			var arr=[
+					"习近平:科学确定脱贫时间 不层层加码 漫评 治国理政",
+					"习近平就防汛提6点要求 国平 考察宁夏 报道集",
+					"李克强主持国务院常务会 定了3件大事",
+					"民航新规:明年起航班因天气原因延误旅客自理食宿",
+					"英国将“东伊运”列入恐怖组织名单 外交部回应",
+					"黄之锋周永康等3名香港“占中”领袖被判有罪",
+					"媒体：周永康系列案通过判决追回至少5.8亿元",
+					"林心如南海表态遭岛内呛声 连累其在台获补助金"
+			]
+			var count=arr.length;
+
+			oBtn.onclick=function(){
+				oList.innerHTML="";
+				for (var i = 0; i < count; i++) {
+					
+					oList.innerHTML+='<li>'+arr[i]+'</li><br/>';
+					
+				
+				}
+			}
+	
+		}
+	</script>
+</body>
+</html>

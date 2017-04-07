@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<ul>
+    <li>ddd</li>
+    <li>ddd</li>
+    <li>ddd</li>
+</ul>
+
+<body>
+    <script>
+    window.onload = function() {
+            var aLi = document.getElementsByTagName('li');
+            for (var i = 0; i < aLi.length; i++) {
+                (function(i) {
+                    aLi[i].onclick = function() {
+                        this.innerHTML = i;
+                    }
+                })(i)
+            }
+        }
+        /*		function aa(){
+        			function bbb(){
+
+        			}
+        		}*/
+
+    /*		function aaa(){
+    			var b=5;
+    			function bbb(){
+    				alert(a)
+    				alert(b)
+    			}
+    		}*/
+
+    /*		function aaa(){
+    			var a=5;
+    			function bbb(){
+    				alert(a);
+    				
+    			}
+    			return bbb;
+
+    		}
+    		var c=aaa();
+    		c();*/
+    /*		function aa(){
+    			var a=1;
+    			function bb(){
+    				a++;
+    				alert(a)
+    			}
+    			return bb;
+    		}
+    		var c=aa();
+    		c();
+    		c();*/
+
+
+    /*var cc=(function aa(){*/
+    /*代码模块化*/
+    /*			var a=1;
+    			function bb(){
+    				a++;
+    				alert(a)
+    			}
+    			return bb;
+    		})()
+    		cc();
+    		cc();*/
+    /*
+        var c = (function aaa() {
+            var a = 1;
+
+            function bbb() {
+                a++;
+                alert(a);
+            }
+
+            function ccc() {
+                a++;
+                alert(a)
+            }
+            return {
+                b: bbb,
+                c: ccc
+            }
+
+        })()
+        c.b();
+        c.c()*/
+    </script>
+</body>
+
+</html>

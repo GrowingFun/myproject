@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        background-color: #333;
+    }
+    
+    canvas {
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        margin-left: -250px;
+        top: 50%;
+        margin-top: -250px;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var oc = document.getElementById("c1")
+        var oGc = oc.getContext('2d'); /*绘图环境*/
+        /*        oGc.fillStyle = "red"
+                oGc.lineJoin = 'bevel'; 
+                oGc.strokeStyle = "black";
+                oGc.lineWidth = '10';
+                oGc.fillRect(30, 30, 100, 100); /*left,top,width,height*/
+        /*  oGc.strokeRect(30.5, 30.5, 100, 100);*/
+        oGc.lineWidth = '10';
+        oGc.strokeStyle = "black";
+        oGc.beginPath();
+        oGc.moveTo(100, 100); /*起始位置*/
+        oGc.lineTo(200, 200) /*结束位置*/
+        oGc.stroke();
+
+    }
+    </script>
+</head>;
+
+<body>
+    <!-- canvas -->
+    <canvas id="c1" width="500" height="500">
+        <span>不支持canvas</span>
+    </canvas>
+</body>
+
+</html>

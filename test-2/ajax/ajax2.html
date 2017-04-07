@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--     <script src="json2.js" type="text/javascript" charset="utf-8"></script> -->
+    <!--兼容ie7以下-->
+</head>
+
+<body>
+    <input type="button" id="btn" name="" value="获取" placeholder="">
+    <ul id="ul1">
+      
+    </ul>
+    <script>
+    /**JSON**/
+    var oBtn = document.getElementById("btn");
+    var oUl1=document.getElementById("ul1")
+    oBtn.onclick = function() {
+    ajax();
+        function ajax(){
+        var xhr = null;
+        try {
+            xhr = new XMLHttpRequest();
+        } catch (e) {
+            xhr = new ActiveXObject('Microsoft.XMLHTTP');
+
+        }
+        xhr.open('get', '2.get.php?username=leo&age=30', true);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var data=JSON.parse(xhr.responseText);
+                    console.log(data)
+                     console.log(data.length)
+                    var html='';
+                    for (var i = 0; i < data.length; i++) {
+        
+                        html+='<li><p>'+data[i].data+'</p><span>'+data[i].date+'</span><span>'+data[i].index+'</span></li>'
+                    }
+                    oUl1.innerHTML=html;
+                }else{
+                    alert(xhr.status)
+                }
+            }
+        }
+}
+
+setInterval(function(){
+
+ajax();
+
+}, 1000);
+
+
+    }
+    var s2 = [1, 2, 3];
+    var sq = '{"name":"dd"}';
+    console.log(typeof JSON.stringify(sq))
+    console.log(JSON.parse(sq))
+    </script>
+</body>
+
+</html>

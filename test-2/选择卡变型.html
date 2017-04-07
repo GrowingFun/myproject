@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    * {
+        font-family: "microsoft yahei";
+    }
+    
+    input.active {
+        background-color: red;
+    }
+    
+    input {
+        border: none;
+        width: 50px;
+        line-height: 30px;
+        height: 30px;
+        color: #fff;
+    }
+    
+    .content {
+        display: none;
+        width: 500px;
+        border: 1px solid #999;
+        height: 500px;
+        color: #666;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <input class="active" type="button" name="" value="tab1" placeholder="">
+        <input type="button" name="" value="tab2" placeholder="">
+        <input type="button" name="" value="tab3" placeholder="">
+        <div class="content" style="display: block;">
+            你好你好111
+        </div>
+        <div class="content">
+            你好你好2222
+        </div>
+        <div class="content">
+            你好你好333
+        </div>
+    </div>
+     <div id="div2">
+        <input class="active" type="button" name="" value="tab1" placeholder="">
+        <input type="button" name="" value="tab2" placeholder="">
+        <input type="button" name="" value="tab3" placeholder="">
+        <div class="content" style="display: block;">
+            你好你好111
+        </div>
+        <div class="content">
+            你好你好2222
+        </div>
+        <div class="content">
+            你好你好333
+        </div>
+    </div>
+    <script>
+    // var oDiv1 = null;
+    // var aInput = null;
+    // var aContent = null;
+
+    // window.onload = function() {
+    //     oDiv1 = document.getElementById("div1");
+    //     aInput = oDiv1.getElementsByTagName("input");
+    //     aContent = oDiv1.getElementsByTagName("div");
+    //     init();
+
+    // }
+
+    // function init() {
+
+    //     for (var i = 0; i < aInput.length; i++) {
+    //         aInput[i].index = i;
+    //         aInput[i].onclick = change;
+    //     };
+
+
+    // }
+
+
+    // function change() {
+    //     for (var i = 0; i < aInput.length; i++) {
+    //         aInput[i].className = "";
+    //     }
+    //     this.className = "active";
+    //     for (var j = 0; j < aContent.length; j++) {
+    //         aContent[j].style.display = "none";
+    //     }
+    //     aContent[this.index].style.display = "block";
+    // }
+    //改成面向对象
+    //全局变量就是属性
+    //函数就是方法
+    //onload中创建对象
+    //this指向:事件或者定时器容易出问题，尽量让面向对象中的THIS指向对象
+    window.onload=function(){
+
+    	var t1=new Tab("div1");
+    	var t2=new Tab("div2");
+    	t1.init();
+    	t2.init();
+    }
+
+    function Tab(id){
+    	this.oDiv1 = document.getElementById(id);
+        this.aInput = this.oDiv1.getElementsByTagName("input");
+        this.aContent = this.oDiv1.getElementsByTagName("div");
+
+    }
+
+
+    Tab.prototype.init=function(){
+    	var That=this;
+        for (var i = 0; i < this.aInput.length; i++) {
+            this.aInput[i].index = i;
+            this.aInput[i].onclick =function(){
+            	That.change(this);
+            }
+        }
+    }
+
+   Tab.prototype.change=function(obj) {
+        for (var i = 0; i < this.aInput.length; i++) {
+            this.aInput[i].className = "";
+        }
+        obj.className = "active";
+        for (var j = 0; j < this.aContent.length; j++) {
+            this.aContent[j].style.display = "none";
+        }
+        this.aContent[obj.index].style.display = "block";
+    }
+    </script>
+</body>
+
+</html>

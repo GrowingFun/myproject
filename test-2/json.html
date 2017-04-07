@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<title>Document</title>
+</head>
+<body>
+<script>
+	$.ajax({
+	url:a.json,
+	success:function(){
+		$(body).append("<ul class='list'></ul>")
+		for (var i = 0; i < data.length; i++) {
+			$(".list").append("<li>"+data.data[i].name+"</li>")
+		}
+	}
+})
+</script>
+
+</body>
+</html>

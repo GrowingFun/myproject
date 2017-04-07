@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        list-style-type: none;
+    }
+    
+    .wrap {
+        width: 800px;
+        margin: 100px auto 0;
+    }
+    
+    #picList {
+        width: 800px;
+        height: 360px;
+        -webkit-perspective: 800px;
+        -webkit-perspective-origin: 800px;
+    }
+    
+    #picList li {
+        width: 50px;
+        height: 360px;
+        position: relative;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform-origin: center center -180px;
+        transition: 2s;
+        float: left;
+    }
+    
+    #picList li span {
+        display: block;
+        width: 360px;
+        height: 360px;
+        background: #ccc;
+        position: absolute;
+    }
+    
+    #picList li span:nth-of-type(1) {
+        -webkit-transform-origin: left;
+        -webkit-transform: rotateY(90deg);
+        left: 0;
+    }
+    
+    #picList li span:nth-of-type(2) {
+        -webkit-transform-origin: right;
+        -webkit-transform: rotateY(-90deg);
+        right: 0;
+    }
+    
+    #picList li a {
+        display: block;
+        width: 420px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #picList li a:nth-of-type(1) {
+        background: url('../test/images/1.png')no-repeat center center;
+        -webkit-transform-origin: bottom;
+        -webkit-transform: rotateX(0deg);
+    }  
+      #picList li a:nth-of-type(2) {
+        background: url('../test/images/2.png')no-repeat center center;
+        -webkit-transform-origin: top;
+        -webkit-transform: rotateX(-90deg);
+    }
+    
+    #picList li a:nth-of-type(3) {
+        background: url('../test/images/3.png')no-repeat center center;
+        -webkit-transform: translateZ(-360px);
+    }
+    
+    #picList li a:nth-of-type(4) {
+        background: url('../test/images/4.png')no-repeat center center;
+        -webkit-transform-origin: bottom;
+        -webkit-transform: rotateX(90deg);
+    }
+    
+    #btns {
+        float: right;
+    }
+    
+    #btns li {
+        width: 20px;
+        height: 20px;
+        background: #333;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        float: left;
+        margin: 0 5px;
+        text-align: center;
+        font-style: italic;
+    }
+    
+    #btns li.active {
+        background: #fff;
+        color: #333;
+    }
+    </style>
+    <style id="css">
+
+    </style>
+    <script>
+    window.onload = function() {
+        var oPicList = document.getElementById("picList");
+        var oCss = document.getElementById("css");
+        var oBtns = document.getElementById("btns");
+        var sLi = '';
+        var iLength = oPicList.clientWidth / 50;
+        var aLi = '';
+        var sCss = ''
+        for (var i = 0; i < iLength; i++) {
+            aLi += '<li>' +
+                '<a href=""></a>' +
+                '<a href=""></a>' +
+                '<a href=""></a>' +
+                '<a href=""></a>' +
+                '<span></span>' +
+                '<span></span>' +
+                '</li>';
+            sCss += '#picList li:nth-of-type(' + (i + 1) + ') a{background-position:-' + i * 50 + 'px 0;}'
+        }
+        oPicList.innerHTML = aLi;
+        oCss.innerHTML = sCss;
+
+    }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="picList">
+            <!--             <li>
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+    <span></span>
+    <span></span>
+</li> -->
+        </ul>
+        <ol id="btns">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+
+</html>

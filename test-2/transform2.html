@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        padding: 100px;
+    }
+    
+    #box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        transition: 2s;
+        transform-style: preserve-3d;
+        padding: 100px;
+    }
+    
+    #div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: .5s;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="div">
+        </div>
+    </div>
+    <script>
+    function cssTransform(element, attr, val) {
+        if (!element.transform) {
+/*            element.transform = {
+                "totate": 40,
+                "scale": 200,
+                "skew": "translate":
+            }*/
+            element.transform={};
+        }
+
+        if (typeof val == "undefined") {
+        	var  val=element.transform[attr];
+        	if (!element.transform[attr]){
+        		switch(attr){
+        			case "scale":
+        			case "scaleX":
+        			case "scaleY":
+        			case "scaleZ":
+        			element.transform[attr]=1;
+        			break;
+        			default:
+        			element.transform[attr]=0;
+        		}
+        	} 
+        	return element.transform[attr];
+        } else {
+        	element.transform[attr]=val;
+            element.style.transform=attr+"("+val+")";
+        }
+
+    }
+    window.onload = function() {
+        var oBox = document.getElementById("box")
+        var oDiv = document.getElementById("div")  
+           oDiv.addEventListener("click",function(){
+/*           		var a=parseInt(cssTransform(this,"rotate"));
+           			a+=60;
+           			cssTransform(this,"rotate",a+"deg");*/
+           			
+           })
+          }
+    </script>
+</body>
+
+</html>

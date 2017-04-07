@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	.red{
+		color: red;
+	}
+	.fontSize{
+		font-size: 50px;
+	}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<span  v-bind:onclick="clickred" v-bind:class="{red:addclass}">{{message}}</span>
+	</div>
+	<script>
+		let obj={
+			message:"ddd",
+			addclass:true
+		}
+		var vm=new Vue({
+			el:'#app',
+			data:obj,
+			methods:{
+				clickred(){
+					data.addclass=false;
+				}
+			},
+			render(createElement){
+				return createElement(
+						"ul",
+						{
+							class:{red:true},
+							style:{
+								fontSize:"50px",
+								color:"blue"
+							},
+							attrs:{
+								"abc":"ddd"
+							}
+
+						},
+						[
+							createElement("li",1),
+							createElement("li",2),
+							createElement("li",3)
+						]
+					)
+			}
+		})
+	</script>
+</body>
+</html>

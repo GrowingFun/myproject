@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+    }
+    
+    .box {
+        background: rgba(208, 35, 35, 0.2);
+        width: 100px;
+        height: 100px;
+        color: #000;
+    }
+    
+    a {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baidu.com">你好，请点击我</a>
+    <div class="box">
+    </div>
+   
+    <script>
+    var oDiv = document.getElementsByTagName("div");
+    var oP = document.getElementsByTagName("p")
+    document.addEventListener("touchstart", function(ev) {
+        ev.preventDefault();
+    })
+    oP[0].addEventListener("touchend", pend)
+
+    function pend() {
+        alert("aaa")
+    }
+
+    oDiv[0].addEventListener("touchend", end)
+
+    /*    oDiv[0].addEventListener("touchstart", start)
+        oDiv[0].addEventListener("touchmove", move)*/
+
+    function end() {
+        this.style.display = "none";
+    }
+    /*
+        function start() {
+            console.log("bbb")
+        }
+
+        function move() {
+            console.log("ccc")
+        }*/
+    </script>
+</body>
+
+</html>
