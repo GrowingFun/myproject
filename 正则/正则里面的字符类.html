@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    /*		字符类：一组相似的字符 []中括号的整体代表一个字符*/
+    var str = 'abc';
+    var re = /a[a-z0-9A-Z]+c/;/*只代表三位 写在一起是或的关系 如果代表多位就用+*/
+    alert(re.test(str))
+   /* 排除:^如果写在[]里面的话就表示排除的意思 相当于非*/
+
+    </script>
+</body>
+
+</html>
