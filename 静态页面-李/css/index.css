@@ -188,7 +188,7 @@ html,body{/*overflow: hidden;*/ height:100%;}
 
 
 @media (max-width: 767px){
-.content_container {width:100%; padding:0 0.24rem; position:relative;}
+.content_container {width:100%; padding:0 0.24rem; position:relative;box-sizing: border-box;}
 .navbar_box .navbar-toggle .icon-bar { background:#ffffff; width:30px; height:3px;}
 .navbar-toggle .icon-bar + .icon-bar{ margin-top:8px;}
 .navbar_box .navbar-toggle{ margin-top:28px; float:left; border:none; padding:0;}
@@ -293,4 +293,97 @@ html,body{/*overflow: hidden;*/ height:100%;}
 .banner_nav dl .bg{ background:url(../images/index/active.png) center no-repeat;}
 .navbar-nav.blue li>a{
 	color:#337ab7;
+}
+.slide-right{
+	position:absolute;
+	bottom:100px;
+	left:auto;
+}
+.estarts_content_second_box{
+	overflow:hidden;
+}
+.slide-left {
+    position: absolute;
+    padding: 0 20px;
+    text-align: justify;
+}
+.showText{
+	animation:.5s showText ease-in;
+	right:0;
+}
+.hideText{
+	animation:.5s hideText ease-out;
+	right:500px;
+}
+.showdate{
+	animation:.5s showdate ease-in;
+	left:10px;
+}
+.hidedate{
+	animation:.5s hidedate ease-in;
+	left:500px;
+}
+@-webkit-keyframes showText{
+	0%{
+		right:500px;
+	}
+	100%{
+		right:0;
+	}
+}
+@keyframes showText{
+	0%{
+		right:500px;
+	}
+	100%{
+		right:0;
+	}
+}
+@-webkit-keyframes hideText{
+	0%{
+		right:0;
+	}
+	100{
+		right:500px;
+	}
+}
+@keyframes hideText{
+	0%{
+		right:0;
+	}
+	100{
+		right:500px;
+	}
+}
+@keyframes showdate{
+	0%{
+		left:500px;
+	}
+	100%{
+		left:10px;
+	}
+}
+@-webkit-keyframes showdate{
+	0%{
+		left:500px;
+	}
+	100%{
+		left:10px;
+	}
+}
+@-webkit-keyframes hidedate{
+	0%{
+		left:10px;
+	}
+	100%{
+		left:500px;
+	}
+}
+@keyframes hidedate{
+	0%{
+		left:10px;
+	}
+	100%{
+		left:500px;
+	}
 }

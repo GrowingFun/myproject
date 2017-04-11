@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">替换前</label>
+    <textarea name="">
+        <h2>fsdfsdf</h2></textarea>
+    <br>
+    <label for="">替换后</label>
+    <textarea name=""></textarea>
+    <input id="btn" type="button" name="" value="替换">
+    <script>
+    /*		字符类：一组相似的字符 []中括号的整体代表一个字符*/
+    /*var str = 'abc';*/
+    /*var re = /a[a-z0-9A-Z]+c/;*/
+    /*只代表三位 写在一起是或的关系 如果代表多位就用+*/
+    /*  alert(re.test(str))*/
+    /* 排除:^如果写在[]里面的话就表示排除的意思 相当于非*/
+/*w代表字母数字下划线*/
+    var aTextarea = document.getElementsByTagName("textarea");
+    var btn = document.getElementById("btn");
+    var re = /<[^>]+>/g;
+    btn.onclick = function() {
+        var tValue = aTextarea[0].value;
+        aTextarea[1].value = tValue.replace(re,function(a){
+            alert(a)
+        });
+
+    }
+    </script>
+</body>
+
+
+</html>
+ 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	.red{
+		background: red;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="app" v-bind:class="{red:active}" >
+		fdsfdsj
+		<span :customId="id"  v-on:click="showH()">fdsfs</span>
+		<img v-show="showspan" src="jiupai-read打卡/style/images/18_1.png" alt="">
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				message:"ddd",
+				active:false,
+				showspan:true,
+				id:'123'
+			},
+			methods:{
+				clicka(){
+					this.active=!this.active;
+				},
+				showH(){
+					this.showspan=!this.showspan;
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <span>{{message}}</span>
+        <ul>
+            <li v-for="item in list">{{item.name}}</li>
+        </ul>
+        <p v-html='html' v-bind:abc="message"></p>
+        <h2>{{true?"yes":"no"}}</h2>
+        
+    </div>
+    <script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "ddd",
+            html:"<div>我是html</div>",
+            list: [{
+                "name": "dd"
+            }, {
+                "name": "fdsfds"
+            }, {
+                "name": "fdsfdsr4w"
+            }]
+        }
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- sort()原生JS排序  join()数组合并-->
+	<script>
+		var str="fhndksjfndTTTTTTTTTTTTTsjklfsssssss";
+		var arr=str.split('');
+		
+		str=arr.sort().join('');
+		var value='';
+		var index=0;
+		var arrV=[];
+		var re=/(\w)\1+/g;
+		str.replace(re,function(a,b){
+			if (index<a.length) {
+				index=a.length;
+				value=b;
+			};
+		})
+		console.log(index)
+		console.log(value)
+
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	 <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	 <script  id="templte" type='x-tempe'>
+	 	<div class='temple'>
+			</div>
+	 </script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		
+	</div>
+	<script>
+/*	var p=`<div class='temple'>
+			</div>`*/
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				message:'fdsfdsf'
+			},
+			template:"#templte"/*会替换以前的模板*/
+		})
+	</script>
+</body>
+</html>

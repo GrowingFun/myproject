@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str="   hfdsklfhdsf ";
+		str=trim(str);
+		console.log(str)
+		function trim(str){
+			var re=/^\s+|\s+$/g;
+			return str.replace(re,'');
+		}
+
+	</script>
+</body>
+</html>

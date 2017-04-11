@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    /*量词：{} */
+    /*{4,7}最少出现4次，最多出现7次*/
+
+    /*{4}正好出现的次数*/
+    /*		+:{1,}
+    		?:{0,1}到少出现一次*/
+    /*:*{}至少出现0次*/
+    /*		var str="13271808308";
+    		var re=/1(8|3|5)(\d){9}/g;
+    		alert(re.test(str))*/
+    var str2 = "290113667";
+        /*qq号*/
+    var re2 = /[1-9]\d{4,11}/g;
+    str2.replace(re2,function(a,b,c){
+    	alert(a)
+    })
+
+    alert(re2.test(str2));
+    </script>
+</body>
+
+</html>

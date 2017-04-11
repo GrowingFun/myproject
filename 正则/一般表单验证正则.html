@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str="290113667@qq.com";
+		var str2="342901198405152021";
+		/*邮箱*/
+		var re=/^\w+@[a-zA-Z0-9]+(\.[a-z]+){1,3}$/ 
+		/*身份证号码*/
+		var re2=/[1-9]\d{14}|[1-9]\d{17}|[1-9]\d{16}x/
+	/*	网址*/
+		var re3=/[a-zA-z]+://[^\s]*/;
+		/*邮政编码*/
+		var re4=/[1-9]\d{5}/
+		alert(re.test(str));
+		alert(re2.test(str2))
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul">
+        <li class="box1">1</li>
+        <li class="box1box2">2</li>
+        <li class="box3 box1 box2">3</li>
+        <li class="box1box2">3</li>
+        <li></li>
+    </ul>
+    <script>
+    var oUl=document.getElementById("ul")
+    var aLi=oUl.getElementsByTagName("li");
+    var re=/box1\b/;
+    /*全称写法*/
+    var patten=new RegExp('box1'+'\\b');
+    for (var i = 0; i < aLi.length; i++) {
+    	if (patten.test(aLi[i].className)) {
+    		aLi[i].style.backgroundColor='red';
+    	}
+    }
+    alert("")
+/*
+当正则需要传参的时候一定要全称写法 RegExp*/
+
+    /*		.:任意字符
+    		\.:真正的点
+    		\b:独立的部(起始，结束，空格)
+    		\B:非独立的部分
+    		\1 重复的子项
+
+
+
+    		*/
+/*    var str = 'abc';
+    var str1 = 'abced';
+    var re = /abc\b/
+    var patten = /a.c/;
+    alert(re.test(str1))*/
+    </script>
+</body>
+
+</html>
